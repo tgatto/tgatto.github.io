@@ -917,6 +917,40 @@ button,input{font:inherit}
   }
 }
 
+
+/* Mobile fix: keep the print dropdown above the hero/cards */
+@media(max-width:850px){
+  .topbar{
+    position:relative !important;
+    z-index:200 !important;
+    overflow:visible !important;
+  }
+
+  .actions{
+    position:relative !important;
+    z-index:210 !important;
+    overflow:visible !important;
+  }
+
+  .print-menu{
+    position:relative !important;
+    z-index:220 !important;
+  }
+
+  .print-menu-list{
+    z-index:230 !important;
+    top:calc(100% + 8px) !important;
+    right:0 !important;
+    left:auto !important;
+    max-width:calc(100vw - 32px) !important;
+  }
+
+  .hero{
+    position:relative !important;
+    z-index:1 !important;
+  }
+}
+
 </style>
 </head>
 <body>
