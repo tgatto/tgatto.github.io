@@ -228,6 +228,37 @@ button,input{font:inherit}
 .linkedin-cta:hover{transform:translateY(-1px);filter:brightness(1.04)}
 .print-only{display:none}
 
+
+.print-menu{position:relative}
+.print-menu-list{
+  position:absolute;
+  right:0;
+  top:calc(100% + 8px);
+  width:min(330px,82vw);
+  padding:8px;
+  border:1px solid var(--line);
+  background:var(--surface);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  display:none;
+  z-index:50;
+}
+.print-menu.open .print-menu-list{display:grid;gap:6px}
+.print-menu-list button{
+  width:100%;
+  border:0;
+  background:transparent;
+  color:var(--text);
+  text-align:left;
+  padding:11px 12px;
+  border-radius:11px;
+  cursor:pointer;
+}
+.print-menu-list button:hover{background:var(--brand-soft)}
+.print-menu-list strong{display:block;font-size:.92rem}
+.print-menu-list span{display:block;margin-top:2px;font-size:.78rem;color:var(--muted);font-weight:500}
+.ats-only{display:none}
+
 @media(max-width:850px){
   .layout{grid-template-columns:1fr}
   .sidebar{position:static}
@@ -512,6 +543,190 @@ button,input{font:inherit}
   }
 }
 
+
+@media print{
+  body[data-print-mode="ats"]{
+    font-size:9.1pt !important;
+    line-height:1.27 !important;
+  }
+
+  body[data-print-mode="ats"] .hero,
+  body[data-print-mode="ats"] .print-only{
+    display:none !important;
+  }
+
+  body[data-print-mode="ats"] .ats-only{
+    display:block !important;
+  }
+
+  body[data-print-mode="ats"] .ats-header{
+    margin:0 0 5mm !important;
+    padding:0 0 4mm !important;
+    border-bottom:1.2pt solid #222 !important;
+    color:#111 !important;
+  }
+
+  body[data-print-mode="ats"] .ats-header h1{
+    margin:0 0 1.5mm !important;
+    font-size:20pt !important;
+    line-height:1.05 !important;
+    color:#111 !important;
+  }
+
+  body[data-print-mode="ats"] .ats-role{
+    font-size:10.5pt !important;
+    font-weight:700 !important;
+    color:#222 !important;
+    margin-bottom:2mm !important;
+  }
+
+  body[data-print-mode="ats"] .ats-contact{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:1mm 3mm !important;
+    font-size:8.7pt !important;
+    color:#333 !important;
+  }
+
+  body[data-print-mode="ats"] .ats-contact span:not(:last-child)::after{
+    content:" ·";
+    color:#777;
+  }
+
+  body[data-print-mode="ats"] .layout{
+    margin-top:0 !important;
+  }
+
+  body[data-print-mode="ats"] #focus,
+  body[data-print-mode="ats"] #projects{
+    display:none !important;
+  }
+
+  body[data-print-mode="ats"] .section{
+    margin-bottom:4mm !important;
+    break-inside:auto !important;
+  }
+
+  body[data-print-mode="ats"] .section-head{
+    margin-bottom:2mm !important;
+  }
+
+  body[data-print-mode="ats"] .section-head h2{
+    font-size:11pt !important;
+    color:#111 !important;
+    text-transform:uppercase !important;
+    letter-spacing:.045em !important;
+  }
+
+  body[data-print-mode="ats"] .section-head:after{
+    background:#aaa !important;
+  }
+
+  body[data-print-mode="ats"] .about{
+    font-size:9.2pt !important;
+  }
+
+  body[data-print-mode="ats"] .timeline{
+    margin-left:0 !important;
+  }
+
+  body[data-print-mode="ats"] .timeline:before,
+  body[data-print-mode="ats"] .job:before{
+    display:none !important;
+  }
+
+  body[data-print-mode="ats"] .job{
+    padding:0 0 3.2mm !important;
+    opacity:1 !important;
+    break-inside:avoid-page !important;
+  }
+
+  body[data-print-mode="ats"] .job-card{
+    border:0 !important;
+    border-radius:0 !important;
+    padding:0 !important;
+    background:#fff !important;
+  }
+
+  body[data-print-mode="ats"] .job-top{
+    display:flex !important;
+    align-items:flex-start !important;
+  }
+
+  body[data-print-mode="ats"] .job h3{
+    font-size:10pt !important;
+    margin:0 !important;
+  }
+
+  body[data-print-mode="ats"] .company{
+    color:#111 !important;
+    font-size:9.1pt !important;
+  }
+
+  body[data-print-mode="ats"] .meta{
+    color:#333 !important;
+    font-size:8.3pt !important;
+    text-align:right !important;
+  }
+
+  body[data-print-mode="ats"] .job-summary{
+    margin:1.3mm 0 0 !important;
+    font-size:8.9pt !important;
+  }
+
+  body[data-print-mode="ats"] .details ul{
+    margin:1.2mm 0 0 !important;
+    padding-left:4.5mm !important;
+  }
+
+  body[data-print-mode="ats"] .details li{
+    font-size:8.6pt !important;
+    margin-top:.5mm !important;
+  }
+
+  body[data-print-mode="ats"] #competenze .stack{
+    display:block !important;
+  }
+
+  body[data-print-mode="ats"] #competenze .stack span{
+    display:inline !important;
+    padding:0 !important;
+    border:0 !important;
+    background:none !important;
+    color:#111 !important;
+    font-size:8.8pt !important;
+  }
+
+  body[data-print-mode="ats"] #competenze .stack span:not(:last-child)::after{
+    content:" · ";
+    color:#666;
+  }
+
+  body[data-print-mode="ats"] #certificazioni .grid2,
+  body[data-print-mode="ats"] #formazione .grid2{
+    display:block !important;
+  }
+
+  body[data-print-mode="ats"] #certificazioni .item,
+  body[data-print-mode="ats"] #formazione .item{
+    border:0 !important;
+    padding:0 !important;
+    margin:0 0 2mm !important;
+    background:#fff !important;
+  }
+
+  body[data-print-mode="ats"] .item h3{
+    font-size:9.2pt !important;
+    margin:0 !important;
+  }
+
+  body[data-print-mode="ats"] .item p{
+    font-size:8.5pt !important;
+    margin:.4mm 0 0 !important;
+    color:#333 !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -548,7 +763,21 @@ button,input{font:inherit}
 </svg></button>
       <button class="btn" id="themeBtn"><span data-i18n="themeBtn">🌙 Tema</span></button>
       <button class="btn" id="expandBtn"><span data-i18n="expandBtn">＋ Espandi</span></button>
-      <button class="btn" onclick="printPortfolio()"><span data-i18n="printBtn">🖨 Stampa / PDF</span></button>
+      <div class="print-menu" id="printMenu">
+        <button class="btn" id="printMenuBtn" type="button" aria-haspopup="true" aria-expanded="false">
+          <span data-i18n="printBtn">🖨 Stampa / PDF</span>
+        </button>
+        <div class="print-menu-list" role="menu">
+          <button type="button" role="menuitem" onclick="printPortfolio('portfolio')">
+            <strong data-i18n="printPortfolioMode">Versione Portfolio</strong>
+            <span data-i18n="printPortfolioHelp">Grafica completa</span>
+          </button>
+          <button type="button" role="menuitem" onclick="printPortfolio('ats')">
+            <strong data-i18n="printAtsMode">CV professionale</strong>
+            <span data-i18n="printAtsHelp">Ottimizzato per portali di recruiting e sistemi ATS</span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -567,6 +796,17 @@ button,input{font:inherit}
   </header>
   <div class="print-only" style="margin:0 0 7mm;font-size:9pt;color:#4a5966">
     <span data-i18n="eyebrow">Portfolio professionale</span> · Tindaro Giuseppe Gatto · LinkedIn: linkedin.com/in/tindaro-giuseppe-gatto-05154455/
+  </div>
+
+  <div class="ats-only ats-header">
+    <h1>Tindaro Giuseppe Gatto</h1>
+    <div class="ats-role" data-i18n="heroRole">Senior Technical Analyst · Data Architecture · Industrial Data · OT/IT Integration</div>
+    <div class="ats-contact">
+      <span data-i18n="atsLocation">Genova, Italia</span>
+      <span>tindaro.gatto@gmail.com</span>
+      <span>linkedin.com/in/tindaro-giuseppe-gatto-05154455</span>
+      <span>tgatto.github.io</span>
+    </div>
   </div>
 
   <div class="layout">
@@ -839,6 +1079,11 @@ const translations = {
     educationHeading: "Formazione",
     filterPlaceholder: "Filtra competenze…",
     printBtn: "🖨 Stampa / PDF",
+    printPortfolioMode: "Versione Portfolio",
+    printPortfolioHelp: "Grafica completa",
+    printAtsMode: "CV professionale",
+    printAtsHelp: "Ottimizzato per portali di recruiting e sistemi ATS",
+    atsLocation: "Genova, Italia",
     expandBtn: "＋ Espandi",
     collapseBtn: "− Comprimi",
     themeBtn: "🌙 Tema",
@@ -927,6 +1172,11 @@ const translations = {
     educationHeading: "Education",
     filterPlaceholder: "Filter skills…",
     printBtn: "🖨 Print / PDF",
+    printPortfolioMode: "Portfolio Version",
+    printPortfolioHelp: "Full visual design",
+    printAtsMode: "Professional CV",
+    printAtsHelp: "Optimized for recruiting portals and ATS systems",
+    atsLocation: "Genoa, Italy",
     expandBtn: "＋ Expand",
     collapseBtn: "− Collapse",
     themeBtn: "🌙 Theme",
@@ -1097,7 +1347,7 @@ document.getElementById('expandBtn').addEventListener('click',e=>{
     job.classList.toggle('open',allOpen);
     job.querySelector('.toggle').textContent=allOpen?(currentLang==='it'?'Nascondi dettagli':'Hide details'):(currentLang==='it'?'Mostra dettagli':'Show details');
   });
-  e.currentTarget.textContent=allOpen?'− Comprimi':'<span data-i18n="expandBtn">＋ Espandi</span>';
+  e.currentTarget.textContent=allOpen?translations[currentLang].collapseBtn:translations[currentLang].expandBtn;
 });
 
 document.querySelectorAll('#focusFilters [data-area]').forEach(btn=>btn.addEventListener('click',()=>{
@@ -1114,10 +1364,15 @@ document.querySelectorAll('#focusFilters [data-area]').forEach(btn=>btn.addEvent
 }));
 
 
-function printPortfolio(){
-  // Ensure the live DOM uses the currently selected language before the browser
-  // creates its print snapshot.
+function printPortfolio(mode='portfolio'){
+  document.body.dataset.printMode = mode;
   applyLanguage(currentLang);
+
+  const menu = document.getElementById('printMenu');
+  const menuBtn = document.getElementById('printMenuBtn');
+  if(menu) menu.classList.remove('open');
+  if(menuBtn) menuBtn.setAttribute('aria-expanded','false');
+
   requestAnimationFrame(()=>{
     requestAnimationFrame(()=>window.print());
   });
@@ -1126,6 +1381,28 @@ function printPortfolio(){
 window.addEventListener('beforeprint', ()=>{
   applyLanguage(currentLang);
 });
+
+window.addEventListener('afterprint', ()=>{
+  delete document.body.dataset.printMode;
+});
+
+const printMenu = document.getElementById('printMenu');
+const printMenuBtn = document.getElementById('printMenuBtn');
+
+if(printMenu && printMenuBtn){
+  printMenuBtn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    const open = printMenu.classList.toggle('open');
+    printMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', (e)=>{
+    if(!printMenu.contains(e.target)){
+      printMenu.classList.remove('open');
+      printMenuBtn.setAttribute('aria-expanded','false');
+    }
+  });
+}
 
 document.getElementById('skillSearch').addEventListener('input',e=>{
   const q=e.target.value.toLowerCase().trim();
