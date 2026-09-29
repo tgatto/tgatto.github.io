@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="<span data-i18n="eyebrow">Portfolio professionale</span> di Tindaro Giuseppe Gatto: Senior Technical Analyst con focus su Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.">
+<meta name="description" content="Portfolio professionale di Tindaro Giuseppe Gatto: Senior Technical Analyst con focus su Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.">Portfolio professionale</span> di Tindaro Giuseppe Gatto: Senior Technical Analyst con focus su Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.">
 <meta name="author" content="Tindaro Giuseppe Gatto">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#0a66c2">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tindaro Giuseppe Gatto — Portfolio">
 <meta property="og:title" content="Tindaro Giuseppe Gatto | Data Architecture, Industrial Data & OT/IT Integration">
-<meta property="og:description" content="<span data-i18n="eyebrow">Portfolio professionale</span>: Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.">
+<meta property="og:description" content="Portfolio professionale: Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.">Portfolio professionale</span>: Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.">
 <meta property="og:url" content="https://tgatto.github.io/">
 <meta property="og:image" content="https://tgatto.github.io/og-cover.svg">
 
@@ -65,6 +65,38 @@ button,input{font:inherit}
   padding:9px 13px;border-radius:999px;cursor:pointer;font-weight:700;transition:.2s ease
 }
 .btn:hover{transform:translateY(-1px);border-color:var(--brand);color:var(--brand)}
+
+#langBtn{
+  position:relative;
+}
+#langBtn::after{
+  content:attr(data-tooltip);
+  position:absolute;
+  left:50%;
+  top:calc(100% + 8px);
+  transform:translateX(-50%) translateY(-4px);
+  background:rgba(20,32,43,.92);
+  color:#fff;
+  padding:6px 9px;
+  border-radius:8px;
+  font-size:.78rem;
+  font-weight:700;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:.18s ease;
+  box-shadow:0 10px 24px rgba(0,0,0,.16);
+}
+#langBtn:hover::after,
+#langBtn:focus-visible::after{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+[data-theme="dark"] #langBtn::after{
+  background:rgba(242,246,249,.96);
+  color:#111;
+}
+
 .hero{
   position:relative;overflow:hidden;padding:58px;border-radius:32px;
   background:
@@ -141,30 +173,27 @@ button,input{font:inherit}
 .footer{margin-top:22px;text-align:center;color:var(--muted);font-size:.9rem}
 
 
-.flag-badge{
-  display:inline-block;
-  width:22px;
-  height:22px;
+
+
+
+.flag-svg{
+  display:block;
+  width:28px;
+  height:28px;
   border-radius:50%;
-  border:1px solid rgba(0,0,0,.12);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.18), 0 1px 2px rgba(0,0,0,.18);
-  vertical-align:middle;
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.22));
+  transition:transform .18s ease, filter .18s ease;
 }
-.flag-it{
-  background:
-    linear-gradient(90deg,#009246 0 33.333%,#ffffff 33.333% 66.666%,#ce2b37 66.666% 100%);
+#langBtn{
+  width:44px;
+  height:44px;
+  padding:7px;
+  display:grid;
+  place-items:center;
 }
-.flag-uk{
-  background:
-    linear-gradient(90deg,transparent 0 42%,#fff 42% 58%,transparent 58% 100%),
-    linear-gradient(0deg,transparent 0 42%,#fff 42% 58%,transparent 58% 100%),
-    linear-gradient(90deg,transparent 0 46%,#cf142b 46% 54%,transparent 54% 100%),
-    linear-gradient(0deg,transparent 0 46%,#cf142b 46% 54%,transparent 54% 100%),
-    linear-gradient(26deg,transparent 0 44%,#fff 44% 49%,transparent 49% 51%,#fff 51% 56%,transparent 56% 100%),
-    linear-gradient(-26deg,transparent 0 44%,#fff 44% 49%,transparent 49% 51%,#fff 51% 56%,transparent 56% 100%),
-    linear-gradient(26deg,transparent 0 47%,#cf142b 47% 50%,transparent 50% 53%,#cf142b 53% 56%,transparent 56% 100%),
-    linear-gradient(-26deg,transparent 0 47%,#cf142b 47% 50%,transparent 50% 53%,#cf142b 53% 56%,transparent 56% 100%),
-    #012169;
+#langBtn:hover .flag-svg{
+  transform:scale(1.08);
+  filter:drop-shadow(0 3px 4px rgba(0,0,0,.26));
 }
 
 .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
@@ -468,7 +497,33 @@ button,input{font:inherit}
   <div class="topbar">
     <div class="brandmark"><div class="avatar">TG</div><span>Tindaro Giuseppe Gatto</span></div>
     <div class="actions">
-      <button class="btn" id="langBtn" aria-label="Cambia lingua / Change language"><span class="flag-badge flag-uk" aria-hidden="true"></span></button>
+      <button class="btn" id="langBtn" aria-label="Switch to English" title="English" data-tooltip="English"><svg class="flag-svg" viewBox="0 0 64 64" aria-hidden="true">
+<defs>
+  <clipPath id="ukClip"><circle cx="32" cy="32" r="30"/></clipPath>
+  <linearGradient id="ukGloss" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fff" stop-opacity=".86"/>
+    <stop offset=".46" stop-color="#fff" stop-opacity=".18"/>
+    <stop offset=".62" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="ukShade" cx=".45" cy=".18" r=".9">
+    <stop offset=".58" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".28"/>
+  </radialGradient>
+</defs>
+<g clip-path="url(#ukClip)">
+  <rect width="64" height="64" fill="#012169"/>
+  <path d="M-8 0 L0 -8 L72 56 L64 72 Z M64 -8 L72 0 L0 72 L-8 64 Z" fill="#fff"/>
+  <path d="M-4 0 L2 0 L68 58 L68 64 L62 64 L-4 6 Z M62 0 L68 0 L68 6 L2 64 L-4 64 L-4 58 Z" fill="#C8102E"/>
+  <rect x="25" width="14" height="64" fill="#fff"/>
+  <rect y="25" width="64" height="14" fill="#fff"/>
+  <rect x="28.5" width="7" height="64" fill="#C8102E"/>
+  <rect y="28.5" width="64" height="7" fill="#C8102E"/>
+  <ellipse cx="32" cy="14" rx="27" ry="17" fill="url(#ukGloss)"/>
+  <rect width="64" height="64" fill="url(#ukShade)"/>
+</g>
+<circle cx="32" cy="32" r="30" fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="1.8"/>
+<circle cx="32" cy="32" r="30.6" fill="none" stroke="#000" stroke-opacity=".18" stroke-width="1.2"/>
+</svg></button>
       <button class="btn" id="themeBtn"><span data-i18n="themeBtn">🌙 Tema</span></button>
       <button class="btn" id="expandBtn"><span data-i18n="expandBtn">＋ Espandi</span></button>
       <button class="btn" onclick="printPortfolio()"><span data-i18n="printBtn">🖨 Stampa / PDF</span></button>
@@ -941,11 +996,61 @@ function applyLanguage(lang){
 
   const langBtn = document.getElementById('langBtn');
   if(langBtn){
-    langBtn.innerHTML = lang === 'it'
-      ? '<span class="flag-badge flag-uk" aria-hidden="true"></span>'
-      : '<span class="flag-badge flag-it" aria-hidden="true"></span>';
-    langBtn.setAttribute('aria-label', lang === 'it' ? 'Switch to English' : 'Passa all’italiano');
-    langBtn.setAttribute('title', lang === 'it' ? 'English' : 'Italiano');
+    const toEnglish = lang === 'it';
+    const flagUK = `<svg class="flag-svg" viewBox="0 0 64 64" aria-hidden="true">
+<defs>
+  <clipPath id="ukClip"><circle cx="32" cy="32" r="30"/></clipPath>
+  <linearGradient id="ukGloss" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fff" stop-opacity=".86"/>
+    <stop offset=".46" stop-color="#fff" stop-opacity=".18"/>
+    <stop offset=".62" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="ukShade" cx=".45" cy=".18" r=".9">
+    <stop offset=".58" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".28"/>
+  </radialGradient>
+</defs>
+<g clip-path="url(#ukClip)">
+  <rect width="64" height="64" fill="#012169"/>
+  <path d="M-8 0 L0 -8 L72 56 L64 72 Z M64 -8 L72 0 L0 72 L-8 64 Z" fill="#fff"/>
+  <path d="M-4 0 L2 0 L68 58 L68 64 L62 64 L-4 6 Z M62 0 L68 0 L68 6 L2 64 L-4 64 L-4 58 Z" fill="#C8102E"/>
+  <rect x="25" width="14" height="64" fill="#fff"/>
+  <rect y="25" width="64" height="14" fill="#fff"/>
+  <rect x="28.5" width="7" height="64" fill="#C8102E"/>
+  <rect y="28.5" width="64" height="7" fill="#C8102E"/>
+  <ellipse cx="32" cy="14" rx="27" ry="17" fill="url(#ukGloss)"/>
+  <rect width="64" height="64" fill="url(#ukShade)"/>
+</g>
+<circle cx="32" cy="32" r="30" fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="1.8"/>
+<circle cx="32" cy="32" r="30.6" fill="none" stroke="#000" stroke-opacity=".18" stroke-width="1.2"/>
+</svg>`;
+    const flagIT = `<svg class="flag-svg" viewBox="0 0 64 64" aria-hidden="true">
+<defs>
+  <clipPath id="itClip"><circle cx="32" cy="32" r="30"/></clipPath>
+  <linearGradient id="itGloss" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fff" stop-opacity=".9"/>
+    <stop offset=".46" stop-color="#fff" stop-opacity=".20"/>
+    <stop offset=".62" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="itShade" cx=".45" cy=".18" r=".9">
+    <stop offset=".58" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".25"/>
+  </radialGradient>
+</defs>
+<g clip-path="url(#itClip)">
+  <rect width="21.34" height="64" x="0" fill="#009246"/>
+  <rect width="21.34" height="64" x="21.33" fill="#fff"/>
+  <rect width="21.34" height="64" x="42.66" fill="#CE2B37"/>
+  <ellipse cx="32" cy="14" rx="27" ry="17" fill="url(#itGloss)"/>
+  <rect width="64" height="64" fill="url(#itShade)"/>
+</g>
+<circle cx="32" cy="32" r="30" fill="none" stroke="#fff" stroke-opacity=".72" stroke-width="1.8"/>
+<circle cx="32" cy="32" r="30.6" fill="none" stroke="#000" stroke-opacity=".18" stroke-width="1.2"/>
+</svg>`;
+    langBtn.innerHTML = toEnglish ? flagUK : flagIT;
+    langBtn.setAttribute('aria-label', toEnglish ? 'Switch to English' : 'Passa all’italiano');
+    langBtn.setAttribute('title', toEnglish ? 'English' : 'Italiano');
+    langBtn.setAttribute('data-tooltip', toEnglish ? 'English' : 'Italiano');
   }
 
   const expandBtn = document.getElementById('expandBtn');
