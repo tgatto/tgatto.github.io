@@ -230,6 +230,15 @@ button,input{font:inherit}
 
 
 .print-menu{position:relative}
+.print-summary{
+  list-style:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  user-select:none;
+}
+.print-summary::-webkit-details-marker{display:none}
+.print-summary::marker{display:none;content:""}
 .print-menu-list{
   position:absolute;
   right:0;
@@ -241,9 +250,9 @@ button,input{font:inherit}
   border-radius:16px;
   box-shadow:var(--shadow);
   display:none;
-  z-index:50;
+  z-index:1000;
 }
-.print-menu.open .print-menu-list{display:grid;gap:6px}
+.print-menu[open] .print-menu-list{display:grid;gap:6px}
 .print-menu-list button{
   width:100%;
   border:0;
@@ -918,155 +927,44 @@ button,input{font:inherit}
 }
 
 
-/* Mobile fix: keep the print dropdown above the hero/cards */
+/* Robust mobile print menu: native details, in normal document flow */
 @media(max-width:850px){
-  .topbar{
-    position:relative !important;
-    z-index:200 !important;
-    overflow:visible !important;
-  }
-
   .actions{
-    position:relative !important;
-    z-index:210 !important;
     overflow:visible !important;
   }
 
   .print-menu{
-    position:relative !important;
-    z-index:220 !important;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+  }
+
+  .print-summary{
+    width:auto;
   }
 
   .print-menu-list{
-    z-index:230 !important;
-    top:calc(100% + 8px) !important;
-    right:0 !important;
-    left:auto !important;
-    max-width:calc(100vw - 32px) !important;
+    position:static !important;
+    width:100% !important;
+    max-width:none !important;
+    margin-top:8px !important;
+    right:auto !important;
+    top:auto !important;
+    box-shadow:none !important;
+    z-index:auto !important;
   }
 
-  .hero{
-    position:relative !important;
-    z-index:1 !important;
-  }
-}
-
-
-/* Mobile print sheet: root-level overlay, never hidden behind portfolio content */
-.mobile-print-overlay{
-  display:none;
-}
-
-@media(max-width:850px){
-  /* The desktop dropdown is not used on phones. */
-  .print-menu .print-menu-list{
-    display:none !important;
+  .print-menu[open]{
+    margin-bottom:4px;
   }
 
-  .mobile-print-overlay{
-    position:fixed;
-    inset:0;
-    z-index:2147483647;
-    display:none;
-    align-items:flex-end;
-    justify-content:center;
+  .print-menu[open] .print-menu-list{
+    display:grid !important;
   }
 
-  .mobile-print-overlay.open{
-    display:flex;
-  }
-
-  .mobile-print-backdrop{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    border:0;
-    margin:0;
-    padding:0;
-    background:rgba(4,10,16,.58);
-    backdrop-filter:blur(3px);
-    -webkit-backdrop-filter:blur(3px);
-  }
-
-  .mobile-print-sheet{
-    position:relative;
-    z-index:1;
-    width:min(100% - 24px, 520px);
-    margin:0 12px 12px;
-    padding:14px;
-    border:1px solid var(--line);
-    border-radius:22px;
-    background:var(--surface);
-    color:var(--text);
-    box-shadow:0 24px 70px rgba(0,0,0,.42);
-  }
-
-  .mobile-print-sheet-head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    padding:4px 4px 10px;
-  }
-
-  .mobile-print-sheet-head>strong{
-    font-size:1rem;
-  }
-
-  .mobile-print-close{
-    width:36px;
-    height:36px;
-    border-radius:50%;
-    border:1px solid var(--line);
-    background:var(--surface-2);
-    color:var(--text);
-    font-size:1.5rem;
-    line-height:1;
-    cursor:pointer;
-  }
-
-  .mobile-print-option{
-    display:block;
-    width:100%;
-    border:0;
-    background:transparent;
-    color:var(--text);
-    text-align:left;
-    padding:14px;
-    border-radius:14px;
-    cursor:pointer;
-  }
-
-  .mobile-print-option + .mobile-print-option{
-    margin-top:4px;
-  }
-
-  .mobile-print-option:active{
-    background:var(--brand-soft);
-  }
-
-  .mobile-print-option strong{
-    display:block;
-    font-size:1rem;
-  }
-
-  .mobile-print-option span{
-    display:block;
-    margin-top:3px;
-    color:var(--muted);
-    font-size:.84rem;
-    font-weight:500;
-  }
-
-  body.mobile-print-open{
-    overflow:hidden;
-  }
-}
-
-@media print{
-  .mobile-print-overlay{
-    display:none !important;
+  .print-menu-list button{
+    padding:13px 12px;
   }
 }
 
@@ -1106,10 +1004,10 @@ button,input{font:inherit}
 </svg></button>
       <button class="btn" id="themeBtn"><span data-i18n="themeBtn">🌙 Tema</span></button>
       <button class="btn" id="expandBtn"><span data-i18n="expandBtn">＋ Espandi</span></button>
-      <div class="print-menu" id="printMenu">
-        <button class="btn" id="printMenuBtn" type="button" aria-haspopup="true" aria-expanded="false">
+      <details class="print-menu" id="printMenu">
+        <summary class="btn print-summary">
           <span data-i18n="printBtn">🖨 Stampa / PDF</span>
-        </button>
+        </summary>
         <div class="print-menu-list" role="menu">
           <button type="button" role="menuitem" onclick="printPortfolio('portfolio')">
             <strong data-i18n="printPortfolioMode">Versione Portfolio</strong>
@@ -1120,7 +1018,7 @@ button,input{font:inherit}
             <span data-i18n="printAtsHelp">Ottimizzato per portali di recruiting e sistemi ATS</span>
           </button>
         </div>
-      </div>
+      </details>
     </div>
   </div>
 
@@ -1372,12 +1270,20 @@ button,input{font:inherit}
 <script>
 const root=document.documentElement;
 const themeBtn=document.getElementById('themeBtn');
-const saved=localStorage.getItem('portfolio-theme');
+
+function safeStorageGet(key){
+  try{return window.localStorage.getItem(key)}catch(e){return null}
+}
+function safeStorageSet(key,value){
+  try{window.localStorage.setItem(key,value)}catch(e){}
+}
+
+const saved=safeStorageGet('portfolio-theme');
 if(saved) root.dataset.theme=saved;
 themeBtn.addEventListener('click',()=>{
   const next=root.dataset.theme==='dark'?'light':'dark';
   root.dataset.theme=next;
-  localStorage.setItem('portfolio-theme',next);
+  safeStorageSet('portfolio-theme',next);
 });
 
 document.querySelectorAll('[data-copy]').forEach(el=>el.addEventListener('click',async()=>{
@@ -1589,11 +1495,11 @@ const translations = {
   }
 };
 
-let currentLang = localStorage.getItem('portfolio-lang') || 'it';
+let currentLang = safeStorageGet('portfolio-lang') || 'it';
 
 function applyLanguage(lang){
   currentLang = lang;
-  localStorage.setItem('portfolio-lang', lang);
+  safeStorageSet('portfolio-lang', lang);
   document.documentElement.lang = lang;
   document.title = translations[lang].pageTitle;
   const meta = document.querySelector('meta[name="description"]');
@@ -1716,10 +1622,7 @@ function printPortfolio(mode='portfolio'){
   applyLanguage(currentLang);
 
   const menu = document.getElementById('printMenu');
-  const menuBtn = document.getElementById('printMenuBtn');
-  if(menu) menu.classList.remove('open');
-  if(menuBtn) menuBtn.setAttribute('aria-expanded','false');
-  if(typeof closeMobilePrintOverlay === 'function') closeMobilePrintOverlay();
+  if(menu) menu.removeAttribute('open');
 
   requestAnimationFrame(()=>{
     requestAnimationFrame(()=>window.print());
@@ -1734,55 +1637,7 @@ window.addEventListener('afterprint', ()=>{
   delete document.body.dataset.printMode;
 });
 
-const printMenu = document.getElementById('printMenu');
-const printMenuBtn = document.getElementById('printMenuBtn');
-const mobilePrintOverlay = document.getElementById('mobilePrintOverlay');
 
-function openMobilePrintOverlay(){
-  if(!mobilePrintOverlay) return;
-  mobilePrintOverlay.classList.add('open');
-  mobilePrintOverlay.setAttribute('aria-hidden','false');
-  document.body.classList.add('mobile-print-open');
-}
-
-function closeMobilePrintOverlay(){
-  if(!mobilePrintOverlay) return;
-  mobilePrintOverlay.classList.remove('open');
-  mobilePrintOverlay.setAttribute('aria-hidden','true');
-  document.body.classList.remove('mobile-print-open');
-}
-
-if(printMenu && printMenuBtn){
-  printMenuBtn.addEventListener('click', (e)=>{
-    e.stopPropagation();
-
-    if(window.innerWidth <= 850){
-      printMenu.classList.remove('open');
-      printMenuBtn.setAttribute('aria-expanded','false');
-      openMobilePrintOverlay();
-      return;
-    }
-
-    const open = printMenu.classList.toggle('open');
-    printMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-
-  document.addEventListener('click', (e)=>{
-    if(window.innerWidth > 850 && !printMenu.contains(e.target)){
-      printMenu.classList.remove('open');
-      printMenuBtn.setAttribute('aria-expanded','false');
-    }
-  });
-}
-
-window.addEventListener('resize', ()=>{
-  if(window.innerWidth > 850){
-    closeMobilePrintOverlay();
-  }else if(printMenu){
-    printMenu.classList.remove('open');
-    if(printMenuBtn) printMenuBtn.setAttribute('aria-expanded','false');
-  }
-});
 
 document.getElementById('skillSearch').addEventListener('input',e=>{
   const q=e.target.value.toLowerCase().trim();
@@ -2142,27 +1997,6 @@ document.getElementById('skillSearch').addEventListener('input',e=>{
     <div class="cv-footer"><span>Tindaro Giuseppe Gatto | CV 2026</span><span>Page 2 / 2</span></div>
   </div>
 </section>
-
-
-<div class="mobile-print-overlay" id="mobilePrintOverlay" aria-hidden="true">
-  <button class="mobile-print-backdrop" type="button" aria-label="Chiudi" onclick="closeMobilePrintOverlay()"></button>
-  <div class="mobile-print-sheet" role="dialog" aria-modal="true" aria-labelledby="mobilePrintTitle">
-    <div class="mobile-print-sheet-head">
-      <strong id="mobilePrintTitle" data-i18n="printBtn">🖨 Stampa / PDF</strong>
-      <button class="mobile-print-close" type="button" aria-label="Chiudi" onclick="closeMobilePrintOverlay()">×</button>
-    </div>
-
-    <button class="mobile-print-option" type="button" onclick="printPortfolio('portfolio')">
-      <strong data-i18n="printPortfolioMode">Versione Portfolio</strong>
-      <span data-i18n="printPortfolioHelp">Grafica completa</span>
-    </button>
-
-    <button class="mobile-print-option" type="button" onclick="printPortfolio('ats')">
-      <strong data-i18n="printAtsMode">CV professionale</strong>
-      <span data-i18n="printAtsHelp">Ottimizzato per portali di recruiting e sistemi ATS</span>
-    </button>
-  </div>
-</div>
 
 </body>
 </html>
