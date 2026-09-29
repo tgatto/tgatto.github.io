@@ -1050,7 +1050,7 @@ button,input{font:inherit}
         <div class="section-head"><h2><span data-i18n="navExperience">Esperienza</span></h2></div>
         <div class="timeline">
 
-          <article class="job open" data-areas="data ot leadership">
+          <article class="job open" data-areas="data ot ai leadership">
             <div class="job-card">
               <div class="job-top">
                 <div><h3>Senior Technical Analyst | Data Architecture &amp; Industrial Data</h3><div class="company">Relatech S.p.A.</div></div>
@@ -1158,9 +1158,9 @@ button,input{font:inherit}
         <div class="section-head"><h2><span data-i18n="navProjects">Selected Projects</span></h2></div>
         <div class="project-grid">
           <article class="project-card">
-            <h3 data-i18n="proj1Title">Industrial Data &amp; Data Architecture</h3>
-            <p data-i18n="proj1Text">Supporto alla definizione di architetture dati, modelli informativi e integrazioni tra sistemi OT/IT e piattaforme dati, con focus sul dato industriale e sulla governance.</p>
-            <div class="project-tags"><span>Industrial Data</span><span>Data Architecture</span><span>OT/IT</span></div>
+            <h3 data-i18n="proj1Title">Industrial Data, Microsoft Fabric &amp; Data Architecture</h3>
+            <p data-i18n="proj1Text">Supporto alla definizione di architetture dati, modelli informativi e integrazioni tra sistemi OT/IT e piattaforme dati, con attività su Microsoft Fabric e valorizzazione del dato industriale tramite soluzioni Data &amp; AI.</p>
+            <div class="project-tags"><span>Industrial Data</span><span>Microsoft Fabric</span><span>Data Architecture</span><span>AI</span><span>OT/IT</span></div>
           </article>
           <article class="project-card">
             <h3 data-i18n="proj2Title">ERP–Industry Integration</h3>
@@ -1286,8 +1286,8 @@ const translations = {
     focus3Text: "Ignition, SCADA/MES, raccolta, gestione e visualizzazione del dato industriale.",
     focus4Title: "Technical Leadership",
     focus4Text: "Coordinamento tecnico, analisi requisiti, solution design, supporto ai team e qualità dei deliverable.",
-    proj1Title: "Industrial Data & Data Architecture",
-    proj1Text: "Supporto alla definizione di architetture dati, modelli informativi e integrazioni tra sistemi OT/IT e piattaforme dati, con focus sul dato industriale e sulla governance.",
+    proj1Title: "Industrial Data, Microsoft Fabric & Data Architecture",
+    proj1Text: "Supporto alla definizione di architetture dati, modelli informativi e integrazioni tra sistemi OT/IT e piattaforme dati, con attività su Microsoft Fabric e valorizzazione del dato industriale tramite soluzioni Data & AI.",
     proj2Title: "ERP–Industry Integration",
     proj2Text: "Analisi e coordinamento di integrazioni tra Oracle NetSuite, sistemi applicativi e piattaforme industriali, inclusi flussi API, database e connessioni con Ignition.",
     proj3Title: "Industrial Automation & Ignition",
@@ -1302,6 +1302,8 @@ const translations = {
     edu3Text: "Istituto Tecnico per Geometri Leonardo da Vinci · 2008",
     edu4Title: "Lingue",
     edu4Text: "Italiano madrelingua · Inglese B2",
+    job1b6: "Attività su Microsoft Fabric per l’integrazione e valorizzazione del dato industriale.",
+    job1b7: "Utilizzo e sperimentazione di soluzioni AI / Generative AI in ambito Data & Industry.",
     meta1: "Gen 2026 – Presente<br>Genova / Ibrido",
     meta2: "Lug 2025 – Dic 2025<br>Genova / Remoto",
     meta3: "Mar 2020 – Lug 2025<br>Genova / Ibrido",
@@ -1379,8 +1381,8 @@ const translations = {
     focus3Text: "Ignition, SCADA/MES, industrial data collection, management and visualization.",
     focus4Title: "Technical Leadership",
     focus4Text: "Technical coordination, requirements analysis, solution design, team support and deliverable quality.",
-    proj1Title: "Industrial Data & Data Architecture",
-    proj1Text: "Support for the definition of data architectures, information models and integrations between OT/IT systems and data platforms, with a focus on industrial data and governance.",
+    proj1Title: "Industrial Data, Microsoft Fabric & Data Architecture",
+    proj1Text: "Support for data architectures, information models and integrations across OT/IT systems and data platforms, including Microsoft Fabric activities and industrial data value through Data & AI solutions.",
     proj2Title: "ERP–Industry Integration",
     proj2Text: "Analysis and coordination of integrations between Oracle NetSuite, enterprise applications and industrial platforms, including APIs, databases and Ignition connections.",
     proj3Title: "Industrial Automation & Ignition",
@@ -1395,6 +1397,8 @@ const translations = {
     edu3Text: "Istituto Tecnico per Geometri Leonardo da Vinci · 2008",
     edu4Title: "Languages",
     edu4Text: "Italian: native · English: B2",
+    job1b6: "Microsoft Fabric activities for industrial data integration and value creation.",
+    job1b7: "Use and experimentation of AI / Generative AI solutions in Data & Industry contexts.",
     meta1: "Jan 2026 – Present<br>Genoa / Hybrid",
     meta2: "Jul 2025 – Dec 2025<br>Genoa / Remote",
     meta3: "Mar 2020 – Jul 2025<br>Genoa / Hybrid",
@@ -1622,7 +1626,8 @@ document.getElementById('skillSearch').addEventListener('input',e=>{
         automazione industriale, applicazioni enterprise e coordinamento tecnico. Il percorso professionale
         combina integrazione tra sistemi ERP e piattaforme industriali, solution design, gestione di team e
         digitalizzazione dei processi. Attualmente il focus è rivolto a Data Architecture &amp; Governance,
-        Industrial Data e integrazione OT/IT, con attenzione a qualità, tracciabilità e fruibilità del dato.
+        Industrial Data e integrazione OT/IT, con attività su Microsoft Fabric e sperimentazione di soluzioni AI / Generative AI,
+        con attenzione a qualità, tracciabilità e fruibilità del dato.
       </p>
     </section>
 
@@ -1632,7 +1637,7 @@ document.getElementById('skillSearch').addEventListener('input',e=>{
         Data Architecture · Industrial Data · Data Governance · Data Modeling · OT/IT Integration ·
         System Integration · Solution Design · Integration Architecture · Ignition · SCADA/MES ·
         Industrial Automation · Oracle NetSuite · REST/SOAP API · SQL / Oracle · Python · JavaScript ·
-        Microsoft Copilot · Copilot Studio · Technical Leadership · Team Coordination
+        Microsoft Fabric · Generative AI · Microsoft Fabric · Generative AI · Microsoft Copilot · Copilot Studio · Technical Leadership · Team Coordination
       </p>
     </section>
 
@@ -1653,6 +1658,8 @@ document.getElementById('skillSearch').addEventListener('input',e=>{
           <li>Supporto al solution design di architetture integrate tra sistemi OT/IT e piattaforme dati.</li>
           <li>Analisi e organizzazione dei domini dati industriali e applicazione di principi di Data Governance.</li>
           <li>Collaborazione tra team Data e Industry, con attenzione a qualità, tracciabilità e fruibilità del dato.</li>
+          <li>Attività su Microsoft Fabric per l’integrazione e valorizzazione del dato industriale.</li>
+          <li>Utilizzo e sperimentazione di soluzioni AI / Generative AI in ambito Data &amp; Industry.</li>
         </ul>
       </article>
 
@@ -1765,7 +1772,7 @@ document.getElementById('skillSearch').addEventListener('input',e=>{
     <section class="cv-section">
       <h2>Tecnologie</h2>
       <p class="cv-skills">
-        Ignition · Oracle NetSuite · REST/SOAP API · Oracle / SQL · Python · JavaScript · Microsoft Copilot ·
+        Ignition · Microsoft Fabric · Generative AI · Oracle NetSuite · REST/SOAP API · Oracle / SQL · Python · JavaScript · Microsoft Copilot ·
         Copilot Studio · Jira · Excel / Power Query · ESRI ArcGIS · FME
       </p>
     </section>
@@ -1794,8 +1801,9 @@ document.getElementById('skillSearch').addEventListener('input',e=>{
         Senior Technical Analyst with experience in technical and functional analysis, system integration,
         industrial automation, enterprise applications and technical coordination. My background combines
         ERP-to-industry integration, solution design, team coordination and process digitalization. My current
-        focus is Data Architecture &amp; Governance, Industrial Data and OT/IT integration, with particular
-        attention to data quality, traceability and usability.
+        focus is Data Architecture &amp; Governance, Industrial Data and OT/IT integration, including Microsoft Fabric
+        activities and experimentation with AI / Generative AI solutions, with particular attention to data quality,
+        traceability and usability.
       </p>
     </section>
 
@@ -1826,6 +1834,8 @@ document.getElementById('skillSearch').addEventListener('input',e=>{
           <li>Support for solution design of integrated architectures across OT/IT systems and data platforms.</li>
           <li>Analysis and organization of industrial data domains and application of Data Governance principles.</li>
           <li>Collaboration across Data and Industry teams, focusing on data quality, traceability and usability.</li>
+          <li>Microsoft Fabric activities for industrial data integration and value creation.</li>
+          <li>Use and experimentation of AI / Generative AI solutions in Data &amp; Industry contexts.</li>
         </ul>
       </article>
 
@@ -1938,7 +1948,7 @@ document.getElementById('skillSearch').addEventListener('input',e=>{
     <section class="cv-section">
       <h2>Technologies</h2>
       <p class="cv-skills">
-        Ignition · Oracle NetSuite · REST/SOAP API · Oracle / SQL · Python · JavaScript · Microsoft Copilot ·
+        Ignition · Microsoft Fabric · Generative AI · Oracle NetSuite · REST/SOAP API · Oracle / SQL · Python · JavaScript · Microsoft Copilot ·
         Copilot Studio · Jira · Excel / Power Query · ESRI ArcGIS · FME
       </p>
     </section>
