@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Portfolio professionale di Tindaro Giuseppe Gatto: Senior Technical Analyst con focus su Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.">
+<meta name="description" content="<span data-i18n="eyebrow">Portfolio professionale</span> di Tindaro Giuseppe Gatto: Senior Technical Analyst con focus su Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.">
 <meta name="author" content="Tindaro Giuseppe Gatto">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#0a66c2">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tindaro Giuseppe Gatto — Portfolio">
 <meta property="og:title" content="Tindaro Giuseppe Gatto | Data Architecture, Industrial Data & OT/IT Integration">
-<meta property="og:description" content="Portfolio professionale: Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.">
+<meta property="og:description" content="<span data-i18n="eyebrow">Portfolio professionale</span>: Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.">
 <meta property="og:url" content="https://tgatto.github.io/">
 <meta property="og:image" content="https://tgatto.github.io/og-cover.svg">
 
@@ -140,6 +140,33 @@ button,input{font:inherit}
 .item p{margin:0;color:var(--muted)}
 .footer{margin-top:22px;text-align:center;color:var(--muted);font-size:.9rem}
 
+
+.flag-badge{
+  display:inline-block;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  border:1px solid rgba(0,0,0,.12);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.18), 0 1px 2px rgba(0,0,0,.18);
+  vertical-align:middle;
+}
+.flag-it{
+  background:
+    linear-gradient(90deg,#009246 0 33.333%,#ffffff 33.333% 66.666%,#ce2b37 66.666% 100%);
+}
+.flag-uk{
+  background:
+    linear-gradient(90deg,transparent 0 42%,#fff 42% 58%,transparent 58% 100%),
+    linear-gradient(0deg,transparent 0 42%,#fff 42% 58%,transparent 58% 100%),
+    linear-gradient(90deg,transparent 0 46%,#cf142b 46% 54%,transparent 54% 100%),
+    linear-gradient(0deg,transparent 0 46%,#cf142b 46% 54%,transparent 54% 100%),
+    linear-gradient(26deg,transparent 0 44%,#fff 44% 49%,transparent 49% 51%,#fff 51% 56%,transparent 56% 100%),
+    linear-gradient(-26deg,transparent 0 44%,#fff 44% 49%,transparent 49% 51%,#fff 51% 56%,transparent 56% 100%),
+    linear-gradient(26deg,transparent 0 47%,#cf142b 47% 50%,transparent 50% 53%,#cf142b 53% 56%,transparent 56% 100%),
+    linear-gradient(-26deg,transparent 0 47%,#cf142b 47% 50%,transparent 50% 53%,#cf142b 53% 56%,transparent 56% 100%),
+    #012169;
+}
+
 .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .project-card{
   padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--surface-2);
@@ -162,61 +189,278 @@ button,input{font:inherit}
 @media(max-width:850px){
   .layout{grid-template-columns:1fr}.sidebar{position:static}.hero{padding:34px}.expertise,.grid2,.project-grid{grid-template-columns:1fr}.job-top{display:block}.meta{white-space:normal;text-align:left;margin-top:4px}.topbar{position:static}
 }
+
 @media print{
+  :root,
+  [data-theme="dark"],
+  [data-theme="light"]{
+    --bg:#ffffff !important;
+    --surface:#ffffff !important;
+    --surface-2:#ffffff !important;
+    --text:#111111 !important;
+    --muted:#4f5d68 !important;
+    --line:#d8e1e8 !important;
+    --brand:#0a66c2 !important;
+    --brand-2:#113a5c !important;
+    --brand-soft:#eef5fb !important;
+    --shadow:none !important;
+  }
+
   @page{size:A4;margin:12mm 12mm 13mm}
-  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-  body{background:#fff!important;color:#111!important;font-size:10.2pt;line-height:1.36}
-  .page{max-width:none!important;padding:0!important}
-  .topbar,.sidebar,.toggle,.search,.footer{display:none!important}
-  .layout{display:block!important;margin-top:10mm}
+
+  html, body{
+    background:#ffffff !important;
+    color:#111111 !important;
+  }
+
+  *{
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+    text-shadow:none !important;
+    box-shadow:none !important;
+  }
+
+  body{
+    font-size:10.2pt;
+    line-height:1.36;
+  }
+
+  .page{
+    max-width:none !important;
+    padding:0 !important;
+    background:#ffffff !important;
+  }
+
+  .topbar,.sidebar,.toggle,.search,.footer{
+    display:none !important;
+  }
+
+  .layout{
+    display:block !important;
+    margin-top:10mm;
+    background:#ffffff !important;
+  }
+
   .hero{
-    background:linear-gradient(135deg,#102f48,#0a66c2 72%,#148da8)!important;
-    color:#fff!important;padding:13mm 13mm 11mm!important;border-radius:0!important;
-    box-shadow:none!important;border:0!important;margin:0 0 7mm!important
+    background:linear-gradient(135deg,#102f48,#0a66c2 72%,#148da8) !important;
+    color:#ffffff !important;
+    padding:13mm 13mm 11mm !important;
+    border-radius:0 !important;
+    border:0 !important;
+    margin:0 0 7mm !important;
   }
-  .hero:after{display:none!important}
-  .hero h1{font-size:27pt!important;margin:2mm 0 3mm!important}
-  .hero .role{font-size:12.5pt!important}
-  .hero .intro{color:#eef6ff!important;margin-top:4mm!important}
-  .hero-links{margin-top:5mm!important}
-  .hero-link{border:1px solid rgba(255,255,255,.32)!important;background:rgba(255,255,255,.10)!important;color:#fff!important;padding:2mm 3mm!important}
+
+  .hero *{
+    color:#ffffff !important;
+  }
+
+  .hero:after{
+    display:none !important;
+  }
+
+  .hero h1{
+    font-size:27pt !important;
+    margin:2mm 0 3mm !important;
+  }
+
+  .hero .role{
+    font-size:12.5pt !important;
+  }
+
+  .hero .intro{
+    color:#eef6ff !important;
+    margin-top:4mm !important;
+  }
+
+  .hero-links{
+    margin-top:5mm !important;
+  }
+
+  .hero-link,
+  .linkedin-cta{
+    border:1px solid rgba(255,255,255,.34) !important;
+    background:rgba(255,255,255,.10) !important;
+    color:#ffffff !important;
+    padding:2mm 3mm !important;
+  }
+
+  .card,
+  .section,
+  .job-card,
+  .expertise-card,
+  .project-card,
+  .item{
+    background:#ffffff !important;
+    color:#111111 !important;
+  }
+
   .card{
-    box-shadow:none!important;border:0!important;border-radius:0!important;
-    padding:0!important;background:#fff!important
+    border:0 !important;
+    border-radius:0 !important;
+    padding:0 !important;
   }
-  .section{margin:0 0 7mm!important;scroll-margin-top:0!important}
-  .section+.section{margin-top:0!important}
-  .section-head{margin-bottom:3mm!important}
-  .section-head h2{font-size:14pt!important;color:#0a4f8a!important}
-  .section-head:after{background:#bdd3e6!important}
-  .about{font-size:10.4pt!important}
-  .expertise,.project-grid,.grid2{grid-template-columns:1fr 1fr!important;gap:3mm!important}
+
+  .section{
+    margin:0 0 7mm !important;
+    scroll-margin-top:0 !important;
+  }
+
+  .section+.section{
+    margin-top:0 !important;
+  }
+
+  .section-head{
+    margin-bottom:3mm !important;
+  }
+
+  .section-head h2{
+    font-size:14pt !important;
+    color:#0a4f8a !important;
+  }
+
+  .section-head:after{
+    background:#bdd3e6 !important;
+  }
+
+  .about{
+    font-size:10.4pt !important;
+    color:#111111 !important;
+  }
+
+  .expertise,.project-grid,.grid2{
+    grid-template-columns:1fr 1fr !important;
+    gap:3mm !important;
+  }
+
   .expertise-card,.project-card,.item,.job-card{
-    background:#fff!important;border:1px solid #d8e1e8!important;
-    box-shadow:none!important;border-radius:3mm!important
+    border:1px solid #d8e1e8 !important;
+    border-radius:3mm !important;
   }
-  .expertise-card,.project-card,.item{padding:3.5mm!important}
-  .project-card:before{width:1.2mm!important}
-  .timeline{margin-left:0!important}
-  .timeline:before{left:2.5mm!important;background:#d8e1e8!important}
-  .job{padding:0 0 4mm 9mm!important;break-inside:avoid-page}
-  .job:before{left:0!important;top:1.2mm!important;width:5mm!important;height:5mm!important;border-width:1.2mm!important}
-  .job-card{padding:4mm!important}
-  .job h3{font-size:11pt!important}
-  .company{color:#0a66c2!important}
-  .meta{font-size:9pt!important}
-  .job-summary{margin:2.2mm 0 0!important}
-  .details{grid-template-rows:1fr!important}
-  .details ul{margin:2mm 0 0!important;padding-left:5mm!important}
-  .details li+li{margin-top:1mm!important}
-  .stack{gap:1.5mm!important}
-  .stack span{padding:1.4mm 2.3mm!important;border-color:#d8e1e8!important;background:#f7fafc!important;font-size:8.8pt!important}
-  .project-tags{margin-top:2mm!important;gap:1.3mm!important}
-  .project-tags span{padding:1mm 1.8mm!important;font-size:8pt!important}
-  .print-only{display:block!important}
-  a{color:inherit!important;text-decoration:none!important}
-  #profilo,#focus,#projects,#certificazioni,#formazione{break-inside:avoid-page}
+
+  .expertise-card,.project-card,.item{
+    padding:3.5mm !important;
+  }
+
+  .expertise-card p,
+  .project-card p,
+  .item p,
+  .small,
+  .meta{
+    color:#4f5d68 !important;
+  }
+
+  .project-card:before{
+    width:1.2mm !important;
+  }
+
+  .timeline{
+    margin-left:0 !important;
+  }
+
+  .timeline:before{
+    left:2.5mm !important;
+    background:#d8e1e8 !important;
+  }
+
+  .job{
+    padding:0 0 4mm 9mm !important;
+    break-inside:avoid-page;
+    opacity:1 !important;
+  }
+
+  .job:before{
+    left:0 !important;
+    top:1.2mm !important;
+    width:5mm !important;
+    height:5mm !important;
+    border-width:1.2mm !important;
+    background:#ffffff !important;
+    border-color:#0a66c2 !important;
+  }
+
+  .job-card{
+    padding:4mm !important;
+  }
+
+  .job h3{
+    font-size:11pt !important;
+    color:#111111 !important;
+  }
+
+  .company{
+    color:#0a66c2 !important;
+  }
+
+  .job-summary{
+    margin:2.2mm 0 0 !important;
+    color:#111111 !important;
+  }
+
+  .details{
+    grid-template-rows:1fr !important;
+  }
+
+  .details>div{
+    overflow:visible !important;
+  }
+
+  .details ul{
+    margin:2mm 0 0 !important;
+    padding-left:5mm !important;
+  }
+
+  .details li{
+    color:#111111 !important;
+  }
+
+  .details li+li{
+    margin-top:1mm !important;
+  }
+
+  .stack{
+    gap:1.5mm !important;
+  }
+
+  .stack span{
+    padding:1.4mm 2.3mm !important;
+    border-color:#d8e1e8 !important;
+    background:#f7fafc !important;
+    color:#24313b !important;
+    font-size:8.8pt !important;
+  }
+
+  .pill,
+  .project-tags span{
+    background:#eef5fb !important;
+    color:#0a4f8a !important;
+    border-color:#cbddea !important;
+  }
+
+  .project-tags{
+    margin-top:2mm !important;
+    gap:1.3mm !important;
+  }
+
+  .project-tags span{
+    padding:1mm 1.8mm !important;
+    font-size:8pt !important;
+  }
+
+  .print-only{
+    display:block !important;
+    color:#4f5d68 !important;
+  }
+
+  a{
+    color:inherit !important;
+    text-decoration:none !important;
+  }
+
+  #profilo,#focus,#projects,#certificazioni,#formazione{
+    break-inside:avoid-page;
+  }
 }
+
 </style>
 </head>
 <body>
@@ -224,19 +468,19 @@ button,input{font:inherit}
   <div class="topbar">
     <div class="brandmark"><div class="avatar">TG</div><span>Tindaro Giuseppe Gatto</span></div>
     <div class="actions">
-      <button class="btn" id="themeBtn">🌙 Tema</button>
-      <button class="btn" id="expandBtn">＋ Espandi</button>
-      <button class="btn" onclick="window.print()">🖨 Stampa / PDF</button>
+      <button class="btn" id="langBtn" aria-label="Cambia lingua / Change language"><span class="flag-badge flag-uk" aria-hidden="true"></span></button>
+      <button class="btn" id="themeBtn"><span data-i18n="themeBtn">🌙 Tema</span></button>
+      <button class="btn" id="expandBtn"><span data-i18n="expandBtn">＋ Espandi</span></button>
+      <button class="btn" onclick="printPortfolio()"><span data-i18n="printBtn">🖨 Stampa / PDF</span></button>
     </div>
   </div>
 
   <header class="hero">
-    <div class="eyebrow">Portfolio professionale</div>
+    <div class="eyebrow"><span data-i18n="eyebrow">Portfolio professionale</span></div>
     <h1>Tindaro Giuseppe Gatto</h1>
-    <div class="role">Senior Technical Analyst · Data Architecture · Industrial Data · OT/IT Integration</div>
-    <p class="intro">
-      Profilo tecnico-funzionale con esperienza in system integration, automazione industriale, applicazioni enterprise e coordinamento tecnico.
-      Oggi il focus è sull'incontro tra mondo Industry e architetture dati, con attenzione a governance, qualità, integrazione e valorizzazione del dato industriale.
+    <div class="role"><span data-i18n="heroRole">Senior Technical Analyst · Data Architecture · Industrial Data · OT/IT Integration</span></div>
+    <p class="intro" data-i18n="heroIntro">
+      Profilo tecnico-funzionale con esperienza in system integration, automazione industriale, applicazioni enterprise e coordinamento tecnico. Oggi il focus è sull'incontro tra mondo Industry e architetture dati, con attenzione a governance, qualità, integrazione e valorizzazione del dato industriale.
     </p>
     <div class="hero-links">
       <span class="hero-link">📍 Genova / Ibrido</span>
@@ -245,7 +489,7 @@ button,input{font:inherit}
     </div>
   </header>
   <div class="print-only" style="margin:0 0 7mm;font-size:9pt;color:#4a5966">
-    Portfolio professionale · Tindaro Giuseppe Gatto · LinkedIn: linkedin.com/in/tindaro-giuseppe-gatto-05154455/
+    <span data-i18n="eyebrow">Portfolio professionale</span> · Tindaro Giuseppe Gatto · LinkedIn: linkedin.com/in/tindaro-giuseppe-gatto-05154455/
   </div>
 
   <div class="layout">
@@ -253,16 +497,16 @@ button,input{font:inherit}
       <div class="card">
         <strong>Navigazione</strong>
         <nav class="nav">
-          <a href="#profilo">Profilo</a>
-          <a href="#focus">Aree di focus</a>
-          <a href="#esperienza">Esperienza</a>
-          <a href="#projects">Selected Projects</a>
-          <a href="#competenze">Competenze</a>
-          <a href="#certificazioni">Certificazioni</a>
-          <a href="#formazione">Formazione</a>
+          <a href="#profilo"><span data-i18n="navProfile">Profilo</span></a>
+          <a href="#focus"><span data-i18n="navFocus">Aree di focus</span></a>
+          <a href="#esperienza"><span data-i18n="navExperience">Esperienza</span></a>
+          <a href="#projects"><span data-i18n="navProjects">Selected Projects</span></a>
+          <a href="#competenze"><span data-i18n="navSkills">Competenze</span></a>
+          <a href="#certificazioni"><span data-i18n="navCerts">Certificazioni</span></a>
+          <a href="#formazione"><span data-i18n="navEducation">Formazione</span></a>
         </nav>
         <hr class="divider">
-        <strong>Filtra esperienza</strong>
+        <strong><span data-i18n="filterExperience">Filtra esperienza</span></strong>
         <div class="pills" id="focusFilters" style="margin-top:10px">
           <button class="pill" data-area="data">Data</button>
           <button class="pill" data-area="ot">OT/IT</button>
@@ -270,49 +514,49 @@ button,input{font:inherit}
           <button class="pill" data-area="erp">ERP</button>
           <button class="pill" data-area="leadership">Leadership</button>
         </div>
-        <p class="small">Seleziona un focus per evidenziare le esperienze più rilevanti.</p>
+        <p class="small"><span data-i18n="filterHelp">Seleziona un focus per evidenziare le esperienze più rilevanti.</span></p>
       </div>
     </aside>
 
     <main>
       <section id="profilo" class="card section">
-        <div class="section-head"><h2>Profilo</h2></div>
+        <div class="section-head"><h2><span data-i18n="navProfile">Profilo</span></h2></div>
         <p class="about">
-          Senior Technical Analyst con esperienza in analisi tecnica e funzionale, system integration, automazione industriale,
+          <span data-i18n="profileText">Senior Technical Analyst con esperienza in analisi tecnica e funzionale, system integration, automazione industriale,
           applicazioni enterprise e coordinamento di team. Nel percorso professionale ho lavorato sull'integrazione tra ERP,
           piattaforme industriali, API, database e sistemi OT. Attualmente opero nell'ambito Data Architecture &amp; Governance,
-          con focus sul dato industriale e sul collegamento tra sistemi sorgente, piattaforme dati e domini informativi.
+          con focus sul dato industriale e sul collegamento tra sistemi sorgente, piattaforme dati e domini informativi.</span>
         </p>
       </section>
 
       <section id="focus" class="card section">
-        <div class="section-head"><h2>Aree di focus</h2></div>
+        <div class="section-head"><h2><span data-i18n="navFocus">Aree di focus</span></h2></div>
         <div class="expertise">
-          <div class="expertise-card"><h3>Data Architecture &amp; Industrial Data</h3><p>Architetture dati, modelli informativi, domini industriali, governance, qualità e tracciabilità.</p></div>
-          <div class="expertise-card"><h3>OT/IT &amp; System Integration</h3><p>Integrazione tra sistemi industriali, applicazioni enterprise, API, database e piattaforme dati.</p></div>
-          <div class="expertise-card"><h3>Industrial Automation</h3><p>Ignition, SCADA/MES, raccolta, gestione e visualizzazione del dato industriale.</p></div>
-          <div class="expertise-card"><h3>Technical Leadership</h3><p>Coordinamento tecnico, analisi requisiti, solution design, supporto ai team e qualità dei deliverable.</p></div>
+          <div class="expertise-card"><h3 data-i18n="focus1Title">Data Architecture &amp; Industrial Data</h3><p data-i18n="focus1Text">Architetture dati, modelli informativi, domini industriali, governance, qualità e tracciabilità.</p></div>
+          <div class="expertise-card"><h3 data-i18n="focus2Title">OT/IT &amp; System Integration</h3><p data-i18n="focus2Text">Integrazione tra sistemi industriali, applicazioni enterprise, API, database e piattaforme dati.</p></div>
+          <div class="expertise-card"><h3 data-i18n="focus3Title">Industrial Automation</h3><p data-i18n="focus3Text">Ignition, SCADA/MES, raccolta, gestione e visualizzazione del dato industriale.</p></div>
+          <div class="expertise-card"><h3 data-i18n="focus4Title">Technical Leadership</h3><p data-i18n="focus4Text">Coordinamento tecnico, analisi requisiti, solution design, supporto ai team e qualità dei deliverable.</p></div>
         </div>
       </section>
 
       <section id="esperienza" class="card section">
-        <div class="section-head"><h2>Esperienza</h2></div>
+        <div class="section-head"><h2><span data-i18n="navExperience">Esperienza</span></h2></div>
         <div class="timeline">
 
           <article class="job open" data-areas="data ot leadership">
             <div class="job-card">
               <div class="job-top">
                 <div><h3>Senior Technical Analyst | Data Architecture &amp; Industrial Data</h3><div class="company">Relatech S.p.A.</div></div>
-                <div class="meta">Gen 2026 – Presente<br>Genova / Ibrido</div>
+                <div class="meta"><span data-i18n="meta1" data-i18n-html="1">Gen 2026 – Presente<br>Genova / Ibrido</span></div>
               </div>
-              <p class="job-summary">Ruolo trasversale tra Data Architecture e mondo Industry, con focus sul dato industriale, sulla governance e sull'integrazione tra piattaforme.</p>
+              <p class="job-summary"><span data-i18n="job1Summary">Ruolo trasversale tra Data Architecture e mondo Industry, con focus sul dato industriale, sulla governance e sull'integrazione tra piattaforme.</span></p>
               <button class="toggle">Nascondi dettagli</button>
               <div class="details"><div><ul>
-                <li>Supporto alla definizione di architetture dati e modelli informativi.</li>
-                <li>Supporto al solution design di architetture integrate tra sistemi OT/IT e piattaforme dati.</li>
-                <li>Analisi e organizzazione dei domini dati industriali.</li>
-                <li>Applicazione di principi di Data Governance e collaborazione tra team Data e Industry.</li>
-                <li>Supporto alla qualità, tracciabilità e fruibilità del dato.</li>
+                <li><span data-i18n="job1b1">Supporto alla definizione di architetture dati e modelli informativi.</span></li>
+                <li><span data-i18n="job1b2">Supporto al solution design di architetture integrate tra sistemi OT/IT e piattaforme dati.</span></li>
+                <li><span data-i18n="job1b3">Analisi e organizzazione dei domini dati industriali.</span></li>
+                <li><span data-i18n="job1b4">Applicazione di principi di Data Governance e collaborazione tra team Data e Industry.</span></li>
+                <li><span data-i18n="job1b5">Supporto alla qualità, tracciabilità e fruibilità del dato.</span></li>
               </ul></div></div>
             </div>
           </article>
@@ -321,15 +565,15 @@ button,input{font:inherit}
             <div class="job-card">
               <div class="job-top">
                 <div><h3>Senior Technical Analyst | AI &amp; Automation Trainer</h3><div class="company">Relatech S.p.A.</div></div>
-                <div class="meta">Lug 2025 – Dic 2025<br>Genova / Remoto</div>
+                <div class="meta"><span data-i18n="meta2" data-i18n-html="1">Lug 2025 – Dic 2025<br>Genova / Remoto</span></div>
               </div>
-              <p class="job-summary">Ruolo trasversale tra intelligenza artificiale applicata e automazione industriale, con attività di formazione, progettazione e coordinamento tecnico.</p>
+              <p class="job-summary"><span data-i18n="job2Summary">Ruolo trasversale tra intelligenza artificiale applicata e automazione industriale, con attività di formazione, progettazione e coordinamento tecnico.</span></p>
               <button class="toggle">Mostra dettagli</button>
               <div class="details"><div><ul>
-                <li>Formazione in AI Awareness, con focus su Microsoft Copilot Studio e adozione consapevole di soluzioni AI in ambito aziendale.</li>
-                <li>Supporto alla definizione di linee guida e processi di integrazione dell'AI nei flussi operativi.</li>
-                <li>Coordinamento tecnico di progetti basati su Ignition by Inductive Automation e supporto ad architetture SCADA/MES.</li>
-                <li>Progettazione di soluzioni per raccolta, gestione e visualizzazione dei dati industriali e formazione tecnica su Ignition.</li>
+                <li><span data-i18n="navEducation">Formazione</span> in AI Awareness, con focus su Microsoft Copilot Studio e adozione consapevole di soluzioni AI in ambito aziendale.</li>
+                <li><span data-i18n="job2b2">Supporto alla definizione di linee guida e processi di integrazione dell'AI nei flussi operativi.</span></li>
+                <li><span data-i18n="job2b3">Coordinamento tecnico di progetti basati su Ignition by Inductive Automation e supporto ad architetture SCADA/MES.</span></li>
+                <li><span data-i18n="job2b4">Progettazione di soluzioni per raccolta, gestione e visualizzazione dei dati industriali e formazione tecnica su Ignition.</span></li>
               </ul></div></div>
             </div>
           </article>
@@ -338,16 +582,16 @@ button,input{font:inherit}
             <div class="job-card">
               <div class="job-top">
                 <div><h3>Senior Technical Analyst | Team Coordinator</h3><div class="company">Relatech S.p.A.</div></div>
-                <div class="meta">Mar 2020 – Lug 2025<br>Genova / Ibrido</div>
+                <div class="meta"><span data-i18n="meta3" data-i18n-html="1">Mar 2020 – Lug 2025<br>Genova / Ibrido</span></div>
               </div>
-              <p class="job-summary">Analisi, progettazione e coordinamento tecnico di soluzioni enterprise e industriali, con particolare focus su Oracle NetSuite, integrazioni e digitalizzazione dei processi.</p>
+              <p class="job-summary"><span data-i18n="job3Summary">Analisi, progettazione e coordinamento tecnico di soluzioni enterprise e industriali, con particolare focus su Oracle NetSuite, integrazioni e digitalizzazione dei processi.</span></p>
               <button class="toggle">Mostra dettagli</button>
               <div class="details"><div><ul>
-                <li>Analisi requisiti, specifiche tecniche e definizione di architetture software e soluzioni scalabili.</li>
-                <li>Coordinamento del team di sviluppo: assegnazione task, code review, supporto tecnico e controllo dei deliverable.</li>
-                <li>Progettazione e coordinamento di integrazioni tramite API REST/SOAP, database e servizi esterni.</li>
-                <li>Implementazione e customizzazione Oracle NetSuite in ambito Finance, CRM, Support Case, Distribuzione e Produzione.</li>
-                <li>Integrazione ERP–Ignition e supporto a iniziative di automazione industriale / Industrial IoT.</li>
+                <li><span data-i18n="job3b1">Analisi requisiti, specifiche tecniche e definizione di architetture software e soluzioni scalabili.</span></li>
+                <li><span data-i18n="job3b2">Coordinamento del team di sviluppo: assegnazione task, code review, supporto tecnico e controllo dei deliverable.</span></li>
+                <li><span data-i18n="job3b3">Progettazione e coordinamento di integrazioni tramite API REST/SOAP, database e servizi esterni.</span></li>
+                <li><span data-i18n="job3b4">Implementazione e customizzazione Oracle NetSuite in ambito Finance, CRM, Support Case, Distribuzione e Produzione.</span></li>
+                <li><span data-i18n="job3b5">Integrazione ERP–Ignition e supporto a iniziative di automazione industriale / Industrial IoT.</span></li>
               </ul></div></div>
             </div>
           </article>
@@ -356,13 +600,13 @@ button,input{font:inherit}
             <div class="job-card">
               <div class="job-top">
                 <div><h3>Functional Analyst</h3><div class="company">NTT DATA Italia</div></div>
-                <div class="meta">Apr 2019 – Feb 2020<br>Milano</div>
+                <div class="meta"><span data-i18n="meta4" data-i18n-html="1">Apr 2019 – Feb 2020<br>Milano</span></div>
               </div>
-              <p class="job-summary">Business e functional analysis per soluzioni enterprise nel settore Energy.</p>
+              <p class="job-summary"><span data-i18n="job4Summary">Business e functional analysis per soluzioni enterprise nel settore Energy.</span></p>
               <button class="toggle">Mostra dettagli</button>
               <div class="details"><div><ul>
-                <li>Raccolta requisiti utente, analisi funzionale e redazione della documentazione di progetto.</li>
-                <li>Analisi e supporto allo sviluppo di funzionalità custom sul prodotto CARTESIO per SNAM Rete Gas.</li>
+                <li><span data-i18n="job4b1">Raccolta requisiti utente, analisi funzionale e redazione della documentazione di progetto.</span></li>
+                <li><span data-i18n="job4b2">Analisi e supporto allo sviluppo di funzionalità custom sul prodotto CARTESIO per SNAM Rete Gas.</span></li>
               </ul></div></div>
             </div>
           </article>
@@ -371,14 +615,14 @@ button,input{font:inherit}
             <div class="job-card">
               <div class="job-top">
                 <div><h3>GIS Analyst &amp; JavaScript Developer / Team Leader</h3><div class="company">Digid Group S.p.A.</div></div>
-                <div class="meta">Lug 2017 – Apr 2019<br>Milano</div>
+                <div class="meta"><span data-i18n="meta5" data-i18n-html="1">Lug 2017 – Apr 2019<br>Milano</span></div>
               </div>
-              <p class="job-summary">Analisi e sviluppo di soluzioni GIS/Web GIS per clienti enterprise e Pubblica Amministrazione.</p>
+              <p class="job-summary"><span data-i18n="job5Summary">Analisi e sviluppo di soluzioni GIS/Web GIS per clienti enterprise e Pubblica Amministrazione.</span></p>
               <button class="toggle">Mostra dettagli</button>
               <div class="details"><div><ul>
-                <li>Analisi qualità dati geografici, data cleansing, documentazione tecnica e User Acceptance Test.</li>
-                <li>Sviluppo di viewer e widget ESRI Web AppBuilder (JavaScript, HTML5, CSS, JSON).</li>
-                <li>Progetti per Regione Lombardia, A2A Unareti e NTT DATA / SNAM.</li>
+                <li><span data-i18n="job5b1">Analisi qualità dati geografici, data cleansing, documentazione tecnica e User Acceptance Test.</span></li>
+                <li><span data-i18n="job5b2">Sviluppo di viewer e widget ESRI Web AppBuilder (JavaScript, HTML5, CSS, JSON).</span></li>
+                <li><span data-i18n="job5b3">Progetti per Regione Lombardia, A2A Unareti e NTT DATA / SNAM.</span></li>
               </ul></div></div>
             </div>
           </article>
@@ -387,14 +631,14 @@ button,input{font:inherit}
             <div class="job-card">
               <div class="job-top">
                 <div><h3>GIS Analyst</h3><div class="company">ARCADIA S.I.T.</div></div>
-                <div class="meta">Lug 2009 – Set 2013<br>Milano</div>
+                <div class="meta"><span data-i18n="meta6" data-i18n-html="1">Lug 2009 – Set 2013<br>Milano</span></div>
               </div>
-              <p class="job-summary">Attività GIS per la gestione e digitalizzazione della rete elettrica.</p>
+              <p class="job-summary"><span data-i18n="job6Summary">Attività GIS per la gestione e digitalizzazione della rete elettrica.</span></p>
               <button class="toggle">Mostra dettagli</button>
               <div class="details"><div><ul>
-                <li>Acquisizione e completamento della cartografia e della rete elettrica.</li>
-                <li>Trasformazione dati da AutoCAD ad ArcGIS tramite FME.</li>
-                <li>Progetto principale: implementazione del GeoDatabase della Rete Elettrica Milanese per A2A.</li>
+                <li><span data-i18n="job6b1">Acquisizione e completamento della cartografia e della rete elettrica.</span></li>
+                <li><span data-i18n="job6b2">Trasformazione dati da AutoCAD ad ArcGIS tramite FME.</span></li>
+                <li><span data-i18n="job6b3">Progetto principale: implementazione del GeoDatabase della Rete Elettrica Milanese per A2A.</span></li>
               </ul></div></div>
             </div>
           </article>
@@ -404,33 +648,33 @@ button,input{font:inherit}
 
 
       <section id="projects" class="card section">
-        <div class="section-head"><h2>Selected Projects</h2></div>
+        <div class="section-head"><h2><span data-i18n="navProjects">Selected Projects</span></h2></div>
         <div class="project-grid">
           <article class="project-card">
-            <h3>Industrial Data &amp; Data Architecture</h3>
-            <p>Supporto alla definizione di architetture dati, modelli informativi e integrazioni tra sistemi OT/IT e piattaforme dati, con focus sul dato industriale e sulla governance.</p>
+            <h3 data-i18n="proj1Title">Industrial Data &amp; Data Architecture</h3>
+            <p data-i18n="proj1Text">Supporto alla definizione di architetture dati, modelli informativi e integrazioni tra sistemi OT/IT e piattaforme dati, con focus sul dato industriale e sulla governance.</p>
             <div class="project-tags"><span>Industrial Data</span><span>Data Architecture</span><span>OT/IT</span></div>
           </article>
           <article class="project-card">
-            <h3>ERP–Industry Integration</h3>
-            <p>Analisi e coordinamento di integrazioni tra Oracle NetSuite, sistemi applicativi e piattaforme industriali, inclusi flussi API, database e connessioni con Ignition.</p>
+            <h3 data-i18n="proj2Title">ERP–Industry Integration</h3>
+            <p data-i18n="proj2Text">Analisi e coordinamento di integrazioni tra Oracle NetSuite, sistemi applicativi e piattaforme industriali, inclusi flussi API, database e connessioni con Ignition.</p>
             <div class="project-tags"><span>Oracle NetSuite</span><span>Ignition</span><span>System Integration</span></div>
           </article>
           <article class="project-card">
-            <h3>Industrial Automation &amp; Ignition</h3>
-            <p>Coordinamento tecnico e supporto a soluzioni SCADA/MES per raccolta, gestione e visualizzazione dei dati industriali, con attività di formazione tecnica.</p>
+            <h3 data-i18n="proj3Title">Industrial Automation &amp; Ignition</h3>
+            <p data-i18n="proj3Text">Coordinamento tecnico e supporto a soluzioni SCADA/MES per raccolta, gestione e visualizzazione dei dati industriali, con attività di formazione tecnica.</p>
             <div class="project-tags"><span>Ignition</span><span>SCADA/MES</span><span>Industrial Automation</span></div>
           </article>
           <article class="project-card">
-            <h3>AI Awareness &amp; Enterprise Adoption</h3>
-            <p>Formazione su AI generativa e Microsoft Copilot Studio, con attenzione all'adozione consapevole, ai flussi operativi e all'integrazione con processi aziendali.</p>
+            <h3 data-i18n="proj4Title">AI Awareness &amp; Enterprise Adoption</h3>
+            <p><span data-i18n="navEducation">Formazione</span> su AI generativa e Microsoft Copilot Studio, con attenzione all'adozione consapevole, ai flussi operativi e all'integrazione con processi aziendali.</p>
             <div class="project-tags"><span>AI Awareness</span><span>Copilot Studio</span><span>Training</span></div>
           </article>
         </div>
       </section>
 
       <section id="competenze" class="card section">
-        <div class="section-head"><h2>Competenze &amp; tecnologie</h2></div>
+        <div class="section-head"><h2><span data-i18n="navSkills">Competenze</span> &amp; tecnologie</h2></div>
         <input class="search" id="skillSearch" placeholder="Filtra competenze…" aria-label="Filtra competenze">
         <div class="stack" id="skills">
           <span>Industrial Data</span><span>Data Architecture</span><span>Data Governance</span><span>Data Modeling</span>
@@ -443,7 +687,7 @@ button,input{font:inherit}
       </section>
 
       <section id="certificazioni" class="card section">
-        <div class="section-head"><h2>Certificazioni</h2></div>
+        <div class="section-head"><h2><span data-i18n="navCerts">Certificazioni</span></h2></div>
         <div class="grid2">
           <div class="item"><h3>Ignition Core 8.1 Certification</h3><p>Inductive Automation · 2024</p></div>
           <div class="item"><h3>Oracle NetSuite SuiteFoundation</h3><p>Certificazione n. 24996 · 2022</p></div>
@@ -451,18 +695,18 @@ button,input{font:inherit}
       </section>
 
       <section id="formazione" class="card section">
-        <div class="section-head"><h2>Formazione</h2></div>
+        <div class="section-head"><h2><span data-i18n="navEducation">Formazione</span></h2></div>
         <div class="grid2">
-          <div class="item"><h3>Laurea di 1° livello in Tecniche della prevenzione negli ambienti e nei luoghi di lavoro</h3><p>Università degli Studi di Pavia · 2018 · 104/110</p></div>
-          <div class="item"><h3>Attestato di competenza – Specialista degli impianti edili</h3><p>Consorzio Scuole Lavoro Milano · 2009</p></div>
-          <div class="item"><h3>Diploma di Geometra</h3><p>Istituto Tecnico per Geometri Leonardo da Vinci · 2008</p></div>
-          <div class="item"><h3>Lingue</h3><p>Italiano madrelingua · Inglese B2</p></div>
+          <div class="item"><h3 data-i18n="edu1Title">Laurea di 1° livello in Tecniche della prevenzione negli ambienti e nei luoghi di lavoro</h3><p data-i18n="edu1Text">Università degli Studi di Pavia · 2018 · 104/110</p></div>
+          <div class="item"><h3 data-i18n="edu2Title">Attestato di competenza – Specialista degli impianti edili</h3><p data-i18n="edu2Text">Consorzio Scuole Lavoro Milano · 2009</p></div>
+          <div class="item"><h3 data-i18n="edu3Title">Diploma di Geometra</h3><p data-i18n="edu3Text">Istituto Tecnico per Geometri Leonardo da Vinci · 2008</p></div>
+          <div class="item"><h3 data-i18n="edu4Title">Lingue</h3><p data-i18n="edu4Text">Italiano madrelingua · Inglese B2</p></div>
         </div>
       </section>
     </main>
   </div>
 
-  <div class="footer">Portfolio professionale · Ultimo aggiornamento 2026</div>
+  <div class="footer"><span data-i18n="eyebrow">Portfolio professionale</span> · <span data-i18n="lastUpdate">Ultimo aggiornamento 2026</span></div>
 </div>
 
 <script>
@@ -487,17 +731,246 @@ document.querySelectorAll('[data-copy]').forEach(el=>el.addEventListener('click'
 document.querySelectorAll('.job .toggle').forEach(btn=>btn.addEventListener('click',()=>{
   const job=btn.closest('.job');
   job.classList.toggle('open');
-  btn.textContent=job.classList.contains('open')?'Nascondi dettagli':'Mostra dettagli';
+  btn.textContent=job.classList.contains('open')?(currentLang==='it'?'Nascondi dettagli':'Hide details'):(currentLang==='it'?'Mostra dettagli':'Show details');
 }));
 
 let allOpen=false;
+
+const translations = {
+  it: {
+    pageTitle: "Tindaro Giuseppe Gatto | Data Architecture, Industrial Data & OT/IT Integration",
+    metaDescription: "Portfolio professionale di Tindaro Giuseppe Gatto: Senior Technical Analyst con focus su Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.",
+    eyebrow: "Portfolio professionale",
+    heroRole: "Senior Technical Analyst · Data Architecture · Industrial Data · OT/IT Integration",
+    heroIntro: "Profilo tecnico-funzionale con esperienza in system integration, automazione industriale, applicazioni enterprise e coordinamento tecnico. Oggi il focus è sull'incontro tra mondo Industry e architetture dati, con attenzione a governance, qualità, integrazione e valorizzazione del dato industriale.",
+    navProfile: "Profilo",
+    navFocus: "Aree di focus",
+    navExperience: "Esperienza",
+    navProjects: "Selected Projects",
+    navSkills: "Competenze",
+    navCerts: "Certificazioni",
+    navEducation: "Formazione",
+    filterExperience: "Filtra esperienza",
+    filterHelp: "Seleziona un focus per evidenziare le esperienze più rilevanti.",
+    profileHeading: "Profilo",
+    profileText: "Senior Technical Analyst con esperienza in analisi tecnica e funzionale, system integration, automazione industriale, applicazioni enterprise e coordinamento di team. Nel percorso professionale ho lavorato sull'integrazione tra ERP, piattaforme industriali, API, database e sistemi OT. Attualmente opero nell'ambito Data Architecture & Governance, con focus sul dato industriale e sul collegamento tra sistemi sorgente, piattaforme dati e domini informativi.",
+    focusHeading: "Aree di focus",
+    experienceHeading: "Esperienza",
+    projectsHeading: "Selected Projects",
+    skillsHeading: "Competenze & tecnologie",
+    certsHeading: "Certificazioni",
+    educationHeading: "Formazione",
+    filterPlaceholder: "Filtra competenze…",
+    printBtn: "🖨 Stampa / PDF",
+    expandBtn: "＋ Espandi",
+    collapseBtn: "− Comprimi",
+    themeBtn: "🌙 Tema",
+    lastUpdate: "Ultimo aggiornamento 2026",
+    focus1Title: "Data Architecture & Industrial Data",
+    focus1Text: "Architetture dati, modelli informativi, domini industriali, governance, qualità e tracciabilità.",
+    focus2Title: "OT/IT & System Integration",
+    focus2Text: "Integrazione tra sistemi industriali, applicazioni enterprise, API, database e piattaforme dati.",
+    focus3Title: "Industrial Automation",
+    focus3Text: "Ignition, SCADA/MES, raccolta, gestione e visualizzazione del dato industriale.",
+    focus4Title: "Technical Leadership",
+    focus4Text: "Coordinamento tecnico, analisi requisiti, solution design, supporto ai team e qualità dei deliverable.",
+    proj1Title: "Industrial Data & Data Architecture",
+    proj1Text: "Supporto alla definizione di architetture dati, modelli informativi e integrazioni tra sistemi OT/IT e piattaforme dati, con focus sul dato industriale e sulla governance.",
+    proj2Title: "ERP–Industry Integration",
+    proj2Text: "Analisi e coordinamento di integrazioni tra Oracle NetSuite, sistemi applicativi e piattaforme industriali, inclusi flussi API, database e connessioni con Ignition.",
+    proj3Title: "Industrial Automation & Ignition",
+    proj3Text: "Coordinamento tecnico e supporto a soluzioni SCADA/MES per raccolta, gestione e visualizzazione dei dati industriali, con attività di formazione tecnica.",
+    proj4Title: "AI Awareness & Enterprise Adoption",
+    proj4Text: "Formazione su AI generativa e Microsoft Copilot Studio, con attenzione all'adozione consapevole, ai flussi operativi e all'integrazione con processi aziendali.",
+    edu1Title: "Laurea di 1° livello in Tecniche della prevenzione negli ambienti e nei luoghi di lavoro",
+    edu1Text: "Università degli Studi di Pavia · 2018 · 104/110",
+    edu2Title: "Attestato di competenza – Specialista degli impianti edili",
+    edu2Text: "Consorzio Scuole Lavoro Milano · 2009",
+    edu3Title: "Diploma di Geometra",
+    edu3Text: "Istituto Tecnico per Geometri Leonardo da Vinci · 2008",
+    edu4Title: "Lingue",
+    edu4Text: "Italiano madrelingua · Inglese B2",
+    meta1: "Gen 2026 – Presente<br>Genova / Ibrido",
+    meta2: "Lug 2025 – Dic 2025<br>Genova / Remoto",
+    meta3: "Mar 2020 – Lug 2025<br>Genova / Ibrido",
+    meta4: "Apr 2019 – Feb 2020<br>Milano",
+    meta5: "Lug 2017 – Apr 2019<br>Milano",
+    meta6: "Lug 2009 – Set 2013<br>Milano",
+    job6b3: "Progetto principale: implementazione del GeoDatabase della Rete Elettrica Milanese per A2A.",
+    job6b2: "Trasformazione dati da AutoCAD ad ArcGIS tramite FME.",
+    job6b1: "Acquisizione e completamento della cartografia e della rete elettrica.",
+    job6Summary: "Attività GIS per la gestione e digitalizzazione della rete elettrica.",
+    job5b3: "Progetti per Regione Lombardia, A2A Unareti e NTT DATA / SNAM.",
+    job5b2: "Sviluppo di viewer e widget ESRI Web AppBuilder (JavaScript, HTML5, CSS, JSON).",
+    job5b1: "Analisi qualità dati geografici, data cleansing, documentazione tecnica e User Acceptance Test.",
+    job5Summary: "Analisi e sviluppo di soluzioni GIS/Web GIS per clienti enterprise e Pubblica Amministrazione.",
+    job4b2: "Analisi e supporto allo sviluppo di funzionalità custom sul prodotto CARTESIO per SNAM Rete Gas.",
+    job4b1: "Raccolta requisiti utente, analisi funzionale e redazione della documentazione di progetto.",
+    job4Summary: "Business e functional analysis per soluzioni enterprise nel settore Energy.",
+    job3b5: "Integrazione ERP–Ignition e supporto a iniziative di automazione industriale / Industrial IoT.",
+    job3b4: "Implementazione e customizzazione Oracle NetSuite in ambito Finance, CRM, Support Case, Distribuzione e Produzione.",
+    job3b3: "Progettazione e coordinamento di integrazioni tramite API REST/SOAP, database e servizi esterni.",
+    job3b2: "Coordinamento del team di sviluppo: assegnazione task, code review, supporto tecnico e controllo dei deliverable.",
+    job3b1: "Analisi requisiti, specifiche tecniche e definizione di architetture software e soluzioni scalabili.",
+    job3Summary: "Analisi, progettazione e coordinamento tecnico di soluzioni enterprise e industriali, con particolare focus su Oracle NetSuite, integrazioni e digitalizzazione dei processi.",
+    job2b4: "Progettazione di soluzioni per raccolta, gestione e visualizzazione dei dati industriali e formazione tecnica su Ignition.",
+    job2b3: "Coordinamento tecnico di progetti basati su Ignition by Inductive Automation e supporto ad architetture SCADA/MES.",
+    job2b2: "Supporto alla definizione di linee guida e processi di integrazione dell'AI nei flussi operativi.",
+    job2b1: "Formazione in AI Awareness, con focus su Microsoft Copilot Studio e adozione consapevole di soluzioni AI in ambito aziendale.",
+    job2Summary: "Ruolo trasversale tra intelligenza artificiale applicata e automazione industriale, con attività di formazione, progettazione e coordinamento tecnico.",
+    job1b5: "Supporto alla qualità, tracciabilità e fruibilità del dato.",
+    job1b4: "Applicazione di principi di Data Governance e collaborazione tra team Data e Industry.",
+    job1b3: "Analisi e organizzazione dei domini dati industriali.",
+    job1b2: "Supporto al solution design di architetture integrate tra sistemi OT/IT e piattaforme dati.",
+    job1b1: "Supporto alla definizione di architetture dati e modelli informativi.",
+    job1Summary: "Ruolo trasversale tra Data Architecture e mondo Industry, con focus sul dato industriale, sulla governance e sull'integrazione tra piattaforme."
+  },
+  en: {
+    pageTitle: "Tindaro Giuseppe Gatto | Data Architecture, Industrial Data & OT/IT Integration",
+    metaDescription: "Professional portfolio of Tindaro Giuseppe Gatto: Senior Technical Analyst focused on Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation and Technical Leadership.",
+    eyebrow: "Professional portfolio",
+    heroRole: "Senior Technical Analyst · Data Architecture · Industrial Data · OT/IT Integration",
+    heroIntro: "Technical-functional professional with experience in system integration, industrial automation, enterprise applications and technical coordination. My current focus is the intersection between Industry and data architectures, with particular attention to governance, quality, integration and industrial data value.",
+    navProfile: "Profile",
+    navFocus: "Focus Areas",
+    navExperience: "Experience",
+    navProjects: "Selected Projects",
+    navSkills: "Skills",
+    navCerts: "Certifications",
+    navEducation: "Education",
+    filterExperience: "Filter experience",
+    filterHelp: "Select a focus area to highlight the most relevant experience.",
+    profileHeading: "Profile",
+    profileText: "Senior Technical Analyst with experience in technical and functional analysis, system integration, industrial automation, enterprise applications and team coordination. Throughout my career I have worked on the integration of ERP systems, industrial platforms, APIs, databases and OT systems. I currently work in Data Architecture & Governance, focusing on industrial data and the connection between source systems, data platforms and information domains.",
+    focusHeading: "Focus Areas",
+    experienceHeading: "Experience",
+    projectsHeading: "Selected Projects",
+    skillsHeading: "Skills & technologies",
+    certsHeading: "Certifications",
+    educationHeading: "Education",
+    filterPlaceholder: "Filter skills…",
+    printBtn: "🖨 Print / PDF",
+    expandBtn: "＋ Expand",
+    collapseBtn: "− Collapse",
+    themeBtn: "🌙 Theme",
+    lastUpdate: "Last updated 2026",
+    focus1Title: "Data Architecture & Industrial Data",
+    focus1Text: "Data architectures, information models, industrial domains, governance, quality and traceability.",
+    focus2Title: "OT/IT & System Integration",
+    focus2Text: "Integration across industrial systems, enterprise applications, APIs, databases and data platforms.",
+    focus3Title: "Industrial Automation",
+    focus3Text: "Ignition, SCADA/MES, industrial data collection, management and visualization.",
+    focus4Title: "Technical Leadership",
+    focus4Text: "Technical coordination, requirements analysis, solution design, team support and deliverable quality.",
+    proj1Title: "Industrial Data & Data Architecture",
+    proj1Text: "Support for the definition of data architectures, information models and integrations between OT/IT systems and data platforms, with a focus on industrial data and governance.",
+    proj2Title: "ERP–Industry Integration",
+    proj2Text: "Analysis and coordination of integrations between Oracle NetSuite, enterprise applications and industrial platforms, including APIs, databases and Ignition connections.",
+    proj3Title: "Industrial Automation & Ignition",
+    proj3Text: "Technical coordination and support for SCADA/MES solutions for industrial data collection, management and visualization, including technical training activities.",
+    proj4Title: "AI Awareness & Enterprise Adoption",
+    proj4Text: "Training on generative AI and Microsoft Copilot Studio, focusing on responsible adoption, operational workflows and integration with business processes.",
+    edu1Title: "Bachelor's Degree in Prevention Techniques in the Environment and Workplace",
+    edu1Text: "University of Pavia · 2018 · 104/110",
+    edu2Title: "Professional Certificate – Building Systems Specialist",
+    edu2Text: "Consorzio Scuole Lavoro Milano · 2009",
+    edu3Title: "Surveyor Diploma",
+    edu3Text: "Istituto Tecnico per Geometri Leonardo da Vinci · 2008",
+    edu4Title: "Languages",
+    edu4Text: "Italian: native · English: B2",
+    meta1: "Jan 2026 – Present<br>Genoa / Hybrid",
+    meta2: "Jul 2025 – Dec 2025<br>Genoa / Remote",
+    meta3: "Mar 2020 – Jul 2025<br>Genoa / Hybrid",
+    meta4: "Apr 2019 – Feb 2020<br>Milan",
+    meta5: "Jul 2017 – Apr 2019<br>Milan",
+    meta6: "Jul 2009 – Sep 2013<br>Milan",
+    job6b3: "Main project: implementation of the Milan Electrical Network GeoDatabase for A2A.",
+    job6b2: "Data transformation from AutoCAD to ArcGIS through FME.",
+    job6b1: "Acquisition and completion of cartographic and electrical network data.",
+    job6Summary: "GIS activities for the management and digitalization of the electrical network.",
+    job5b3: "Projects for Regione Lombardia, A2A Unareti and NTT DATA / SNAM.",
+    job5b2: "Development of ESRI Web AppBuilder viewers and widgets (JavaScript, HTML5, CSS, JSON).",
+    job5b1: "Geospatial data quality analysis, data cleansing, technical documentation and User Acceptance Testing.",
+    job5Summary: "Analysis and development of GIS/Web GIS solutions for enterprise and Public Administration clients.",
+    job4b2: "Analysis and development support for custom features on the CARTESIO product for SNAM Rete Gas.",
+    job4b1: "User requirements gathering, functional analysis and project documentation.",
+    job4Summary: "Business and functional analysis for enterprise solutions in the Energy sector.",
+    job3b5: "ERP–Ignition integration and support for industrial automation / Industrial IoT initiatives.",
+    job3b4: "Implementation and customization of Oracle NetSuite across Finance, CRM, Support Case, Distribution and Manufacturing.",
+    job3b3: "Design and coordination of integrations through REST/SOAP APIs, databases and external services.",
+    job3b2: "Development team coordination: task assignment, code review, technical support and deliverable quality control.",
+    job3b1: "Requirements analysis, technical specifications and definition of software architectures and scalable solutions.",
+    job3Summary: "Analysis, design and technical coordination of enterprise and industrial solutions, with a strong focus on Oracle NetSuite, integrations and process digitalization.",
+    job2b4: "Design of solutions for industrial data collection, management and visualization, including technical training on Ignition.",
+    job2b3: "Technical coordination of projects based on Ignition by Inductive Automation and support for SCADA/MES architectures.",
+    job2b2: "Support for defining guidelines and AI integration processes within operational workflows.",
+    job2b1: "AI Awareness training focused on Microsoft Copilot Studio and responsible adoption of AI solutions in enterprise environments.",
+    job2Summary: "Cross-functional role between applied artificial intelligence and industrial automation, covering training, design and technical coordination.",
+    job1b5: "Support for data quality, traceability and usability.",
+    job1b4: "Application of Data Governance principles and collaboration across Data and Industry teams.",
+    job1b3: "Analysis and organization of industrial data domains.",
+    job1b2: "Support for solution design of integrated architectures between OT/IT systems and data platforms.",
+    job1b1: "Support for the definition of data architectures and information models.",
+    job1Summary: "Cross-functional role between Data Architecture and Industry, focused on industrial data, governance and platform integration."
+  }
+};
+
+let currentLang = localStorage.getItem('portfolio-lang') || 'it';
+
+function applyLanguage(lang){
+  currentLang = lang;
+  localStorage.setItem('portfolio-lang', lang);
+  document.documentElement.lang = lang;
+  document.title = translations[lang].pageTitle;
+  const meta = document.querySelector('meta[name="description"]');
+  if(meta) meta.setAttribute('content', translations[lang].metaDescription);
+
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(translations[lang][key] !== undefined){
+      if(el.dataset.i18nHtml === '1'){
+        el.innerHTML = translations[lang][key];
+      }else{
+        el.textContent = translations[lang][key];
+      }
+    }
+  });
+
+  const skillSearch = document.getElementById('skillSearch');
+  if(skillSearch) skillSearch.placeholder = translations[lang].filterPlaceholder;
+
+  const langBtn = document.getElementById('langBtn');
+  if(langBtn){
+    langBtn.innerHTML = lang === 'it'
+      ? '<span class="flag-badge flag-uk" aria-hidden="true"></span>'
+      : '<span class="flag-badge flag-it" aria-hidden="true"></span>';
+    langBtn.setAttribute('aria-label', lang === 'it' ? 'Switch to English' : 'Passa all’italiano');
+    langBtn.setAttribute('title', lang === 'it' ? 'English' : 'Italiano');
+  }
+
+  const expandBtn = document.getElementById('expandBtn');
+  if(expandBtn) expandBtn.textContent = allOpen ? translations[lang].collapseBtn : translations[lang].expandBtn;
+
+  document.querySelectorAll('.job .toggle').forEach(btn=>{
+    const job = btn.closest('.job');
+    btn.textContent = job.classList.contains('open')
+      ? (lang === 'it' ? 'Nascondi dettagli' : 'Hide details')
+      : (lang === 'it' ? 'Mostra dettagli' : 'Show details');
+  });
+}
+
+document.getElementById('langBtn').addEventListener('click', ()=>{
+  applyLanguage(currentLang === 'it' ? 'en' : 'it');
+});
+
+applyLanguage(currentLang);
 document.getElementById('expandBtn').addEventListener('click',e=>{
   allOpen=!allOpen;
   document.querySelectorAll('.job').forEach(job=>{
     job.classList.toggle('open',allOpen);
-    job.querySelector('.toggle').textContent=allOpen?'Nascondi dettagli':'Mostra dettagli';
+    job.querySelector('.toggle').textContent=allOpen?(currentLang==='it'?'Nascondi dettagli':'Hide details'):(currentLang==='it'?'Mostra dettagli':'Show details');
   });
-  e.currentTarget.textContent=allOpen?'− Comprimi':'＋ Espandi';
+  e.currentTarget.textContent=allOpen?'− Comprimi':'<span data-i18n="expandBtn">＋ Espandi</span>';
 });
 
 document.querySelectorAll('#focusFilters [data-area]').forEach(btn=>btn.addEventListener('click',()=>{
@@ -512,6 +985,20 @@ document.querySelectorAll('#focusFilters [data-area]').forEach(btn=>btn.addEvent
     }
   });
 }));
+
+
+function printPortfolio(){
+  // Ensure the live DOM uses the currently selected language before the browser
+  // creates its print snapshot.
+  applyLanguage(currentLang);
+  requestAnimationFrame(()=>{
+    requestAnimationFrame(()=>window.print());
+  });
+}
+
+window.addEventListener('beforeprint', ()=>{
+  applyLanguage(currentLang);
+});
 
 document.getElementById('skillSearch').addEventListener('input',e=>{
   const q=e.target.value.toLowerCase().trim();
