@@ -727,6 +727,196 @@ button,input{font:inherit}
   }
 }
 
+
+/* =========================================================
+   PROFESSIONAL CV — independent from the visible portfolio
+   ========================================================= */
+.cv-document{
+  display:none;
+}
+
+@media print{
+  body[data-print-mode="ats"] .page{
+    display:none !important;
+  }
+
+  body[data-print-mode="ats"] .cv-document{
+    display:block !important;
+    background:#fff !important;
+    color:#111 !important;
+    font-family:Arial, Helvetica, sans-serif !important;
+  }
+
+  body[data-print-mode="ats"] .cv-document.cv-en,
+  body[data-print-mode="ats"] .cv-document.cv-it{
+    display:none !important;
+  }
+
+  html[lang="it"] body[data-print-mode="ats"] .cv-document.cv-it{
+    display:block !important;
+  }
+
+  html[lang="en"] body[data-print-mode="ats"] .cv-document.cv-en{
+    display:block !important;
+  }
+
+  body[data-print-mode="ats"] .cv-page{
+    width:100%;
+    background:#fff !important;
+    color:#111 !important;
+    page-break-after:always;
+    break-after:page;
+  }
+
+  body[data-print-mode="ats"] .cv-page:last-child{
+    page-break-after:auto;
+    break-after:auto;
+  }
+
+  body[data-print-mode="ats"] .cv-header{
+    border-bottom:1.4pt solid #222;
+    padding-bottom:4mm;
+    margin-bottom:5mm;
+  }
+
+  body[data-print-mode="ats"] .cv-header h1{
+    font-size:22pt;
+    line-height:1;
+    margin:0 0 1.8mm;
+    font-weight:700;
+    letter-spacing:-.02em;
+  }
+
+  body[data-print-mode="ats"] .cv-title{
+    font-size:11.2pt;
+    font-weight:700;
+    margin-bottom:2.2mm;
+  }
+
+  body[data-print-mode="ats"] .cv-contact{
+    font-size:9.3pt;
+    line-height:1.35;
+    color:#333;
+  }
+
+  body[data-print-mode="ats"] .cv-contact span:not(:last-child)::after{
+    content:" · ";
+    color:#777;
+  }
+
+  body[data-print-mode="ats"] .cv-section{
+    margin:0 0 4.8mm;
+  }
+
+  body[data-print-mode="ats"] .cv-section h2{
+    font-size:11.5pt;
+    line-height:1.1;
+    margin:0 0 2.3mm;
+    padding-bottom:1mm;
+    border-bottom:.8pt solid #999;
+    text-transform:uppercase;
+    letter-spacing:.045em;
+  }
+
+  body[data-print-mode="ats"] .cv-profile{
+    font-size:10.2pt;
+    line-height:1.42;
+    margin:0;
+  }
+
+  body[data-print-mode="ats"] .cv-skills{
+    font-size:9.6pt;
+    line-height:1.5;
+    margin:0;
+  }
+
+  body[data-print-mode="ats"] .cv-role{
+    margin:0 0 4.2mm;
+    break-inside:avoid-page;
+    page-break-inside:avoid;
+  }
+
+  body[data-print-mode="ats"] .cv-role-head{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:6mm;
+    align-items:start;
+    margin-bottom:1.3mm;
+  }
+
+  body[data-print-mode="ats"] .cv-role-title{
+    font-size:10.8pt;
+    line-height:1.2;
+    font-weight:700;
+    margin:0;
+  }
+
+  body[data-print-mode="ats"] .cv-company{
+    font-size:9.6pt;
+    font-weight:700;
+    margin:.4mm 0 0;
+  }
+
+  body[data-print-mode="ats"] .cv-meta{
+    font-size:9pt;
+    line-height:1.25;
+    text-align:right;
+    color:#333;
+    white-space:nowrap;
+  }
+
+  body[data-print-mode="ats"] .cv-role p{
+    font-size:9.55pt;
+    line-height:1.34;
+    margin:0 0 1.2mm;
+  }
+
+  body[data-print-mode="ats"] .cv-role ul{
+    margin:1.2mm 0 0;
+    padding-left:5mm;
+  }
+
+  body[data-print-mode="ats"] .cv-role li{
+    font-size:9.35pt;
+    line-height:1.3;
+    margin:.65mm 0;
+  }
+
+  body[data-print-mode="ats"] .cv-grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4mm 8mm;
+  }
+
+  body[data-print-mode="ats"] .cv-item{
+    break-inside:avoid-page;
+  }
+
+  body[data-print-mode="ats"] .cv-item strong{
+    display:block;
+    font-size:9.8pt;
+    line-height:1.25;
+  }
+
+  body[data-print-mode="ats"] .cv-item span{
+    display:block;
+    margin-top:.5mm;
+    font-size:9pt;
+    line-height:1.3;
+    color:#333;
+  }
+
+  body[data-print-mode="ats"] .cv-footer{
+    margin-top:5mm;
+    padding-top:2mm;
+    border-top:.6pt solid #ccc;
+    display:flex;
+    justify-content:space-between;
+    font-size:7.8pt;
+    color:#666;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1083,7 +1273,7 @@ const translations = {
     printPortfolioHelp: "Grafica completa",
     printAtsMode: "CV professionale",
     printAtsHelp: "Ottimizzato per portali di recruiting e sistemi ATS",
-    atsLocation: "Genova, Italia",
+    atsLocation: "Albenga (SV), Italia",
     expandBtn: "＋ Espandi",
     collapseBtn: "− Comprimi",
     themeBtn: "🌙 Tema",
@@ -1176,7 +1366,7 @@ const translations = {
     printPortfolioHelp: "Full visual design",
     printAtsMode: "Professional CV",
     printAtsHelp: "Optimized for recruiting portals and ATS systems",
-    atsLocation: "Genoa, Italy",
+    atsLocation: "Albenga (SV), Italy",
     expandBtn: "＋ Expand",
     collapseBtn: "− Collapse",
     themeBtn: "🌙 Theme",
@@ -1411,5 +1601,351 @@ document.getElementById('skillSearch').addEventListener('input',e=>{
   });
 });
 </script>
+
+<section class="cv-document cv-it" aria-hidden="true">
+  <div class="cv-page">
+    <header class="cv-header">
+      <h1>Tindaro Giuseppe Gatto</h1>
+      <div class="cv-title">Senior Technical Analyst | Data Architecture | Industrial Data | OT/IT Integration</div>
+      <div class="cv-contact">
+        <span>Albenga (SV), Italia</span>
+        <span>tindaro.gatto@gmail.com</span>
+        <span>linkedin.com/in/tindaro-giuseppe-gatto-05154455</span>
+        <span>tgatto.github.io</span>
+      </div>
+    </header>
+
+    <section class="cv-section">
+      <h2>Profilo professionale</h2>
+      <p class="cv-profile">
+        Senior Technical Analyst con esperienza in analisi tecnica e funzionale, system integration,
+        automazione industriale, applicazioni enterprise e coordinamento tecnico. Il percorso professionale
+        combina integrazione tra sistemi ERP e piattaforme industriali, solution design, gestione di team e
+        digitalizzazione dei processi. Attualmente il focus è rivolto a Data Architecture &amp; Governance,
+        Industrial Data e integrazione OT/IT, con attenzione a qualità, tracciabilità e fruibilità del dato.
+      </p>
+    </section>
+
+    <section class="cv-section">
+      <h2>Competenze chiave</h2>
+      <p class="cv-skills">
+        Data Architecture · Industrial Data · Data Governance · Data Modeling · OT/IT Integration ·
+        System Integration · Solution Design · Integration Architecture · Ignition · SCADA/MES ·
+        Industrial Automation · Oracle NetSuite · REST/SOAP API · SQL / Oracle · Python · JavaScript ·
+        Microsoft Copilot · Copilot Studio · Technical Leadership · Team Coordination
+      </p>
+    </section>
+
+    <section class="cv-section">
+      <h2>Esperienza professionale</h2>
+
+      <article class="cv-role">
+        <div class="cv-role-head">
+          <div>
+            <div class="cv-role-title">Senior Technical Analyst | Data Architecture &amp; Industrial Data</div>
+            <div class="cv-company">Relatech S.p.A.</div>
+          </div>
+          <div class="cv-meta">Gen 2026 – Presente<br>Genova / Ibrido</div>
+        </div>
+        <p>Ruolo trasversale tra Data Architecture e mondo Industry, con focus sul dato industriale, sulla governance e sull’integrazione tra piattaforme.</p>
+        <ul>
+          <li>Supporto alla definizione di architetture dati e modelli informativi.</li>
+          <li>Supporto al solution design di architetture integrate tra sistemi OT/IT e piattaforme dati.</li>
+          <li>Analisi e organizzazione dei domini dati industriali e applicazione di principi di Data Governance.</li>
+          <li>Collaborazione tra team Data e Industry, con attenzione a qualità, tracciabilità e fruibilità del dato.</li>
+        </ul>
+      </article>
+
+      <article class="cv-role">
+        <div class="cv-role-head">
+          <div>
+            <div class="cv-role-title">Senior Technical Analyst | AI &amp; Automation Trainer</div>
+            <div class="cv-company">Relatech S.p.A.</div>
+          </div>
+          <div class="cv-meta">Lug 2025 – Dic 2025<br>Genova / Remoto</div>
+        </div>
+        <p>Ruolo trasversale tra intelligenza artificiale applicata e automazione industriale, con attività di formazione, progettazione e coordinamento tecnico.</p>
+        <ul>
+          <li>Formazione in AI Awareness e Microsoft Copilot Studio per l’adozione consapevole di soluzioni AI in ambito aziendale.</li>
+          <li>Supporto alla definizione di linee guida e processi di integrazione dell’AI nei flussi operativi.</li>
+          <li>Coordinamento tecnico di progetti basati su Ignition e supporto ad architetture SCADA/MES.</li>
+          <li>Progettazione di soluzioni per raccolta, gestione e visualizzazione dei dati industriali e formazione tecnica su Ignition.</li>
+        </ul>
+      </article>
+
+      <article class="cv-role">
+        <div class="cv-role-head">
+          <div>
+            <div class="cv-role-title">Senior Technical Analyst | Team Coordinator</div>
+            <div class="cv-company">Relatech S.p.A.</div>
+          </div>
+          <div class="cv-meta">Mar 2020 – Lug 2025<br>Genova / Ibrido</div>
+        </div>
+        <p>Analisi, progettazione e coordinamento tecnico di soluzioni enterprise e industriali, con focus su Oracle NetSuite, integrazioni e digitalizzazione dei processi.</p>
+        <ul>
+          <li>Analisi requisiti, redazione di specifiche tecniche e definizione di architetture software e soluzioni scalabili.</li>
+          <li>Coordinamento del team di sviluppo: assegnazione task, code review, supporto tecnico e controllo dei deliverable.</li>
+          <li>Progettazione e coordinamento di integrazioni tramite API REST/SOAP, database e servizi esterni.</li>
+          <li>Implementazione e customizzazione Oracle NetSuite in ambito Finance, CRM, Support Case, Distribuzione e Produzione.</li>
+          <li>Integrazione ERP–Ignition e supporto a iniziative di automazione industriale / Industrial IoT.</li>
+        </ul>
+      </article>
+    </section>
+
+    <div class="cv-footer"><span>tgatto.github.io</span><span>Pagina 1 / 2</span></div>
+  </div>
+
+  <div class="cv-page">
+    <section class="cv-section">
+      <h2>Esperienza precedente</h2>
+
+      <article class="cv-role">
+        <div class="cv-role-head">
+          <div>
+            <div class="cv-role-title">Functional Analyst</div>
+            <div class="cv-company">NTT DATA Italia</div>
+          </div>
+          <div class="cv-meta">Apr 2019 – Feb 2020<br>Milano</div>
+        </div>
+        <p>Business e functional analysis per soluzioni enterprise nel settore Energy.</p>
+        <ul>
+          <li>Raccolta requisiti utente, analisi funzionale e redazione della documentazione di progetto.</li>
+          <li>Analisi e supporto allo sviluppo di funzionalità custom sul prodotto CARTESIO per SNAM Rete Gas.</li>
+        </ul>
+      </article>
+
+      <article class="cv-role">
+        <div class="cv-role-head">
+          <div>
+            <div class="cv-role-title">GIS Analyst &amp; JavaScript Developer / Team Leader</div>
+            <div class="cv-company">Digid Group S.p.A.</div>
+          </div>
+          <div class="cv-meta">Lug 2017 – Apr 2019<br>Milano</div>
+        </div>
+        <ul>
+          <li>Analisi della qualità dei dati geografici, data cleansing, documentazione tecnica e User Acceptance Test.</li>
+          <li>Sviluppo di viewer e widget ESRI Web AppBuilder con JavaScript, HTML5, CSS e JSON.</li>
+          <li>Progetti per Regione Lombardia, A2A Unareti e NTT DATA / SNAM.</li>
+        </ul>
+      </article>
+
+      <article class="cv-role">
+        <div class="cv-role-head">
+          <div>
+            <div class="cv-role-title">GIS Analyst</div>
+            <div class="cv-company">ARCADIA S.I.T.</div>
+          </div>
+          <div class="cv-meta">Lug 2009 – Set 2013<br>Milano</div>
+        </div>
+        <ul>
+          <li>Gestione e digitalizzazione della rete elettrica tramite ArcGIS, AutoCAD e FME.</li>
+          <li>Implementazione del GeoDatabase della Rete Elettrica Milanese per A2A.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Certificazioni</h2>
+      <div class="cv-grid-2">
+        <div class="cv-item"><strong>Ignition Core 8.1 Certification</strong><span>Inductive Automation · 2024</span></div>
+        <div class="cv-item"><strong>Oracle NetSuite SuiteFoundation</strong><span>Certificazione n. 24996 · 2022</span></div>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Formazione</h2>
+      <div class="cv-grid-2">
+        <div class="cv-item"><strong>Laurea di 1° livello in Tecniche della prevenzione negli ambienti e nei luoghi di lavoro</strong><span>Università degli Studi di Pavia · 2018 · 104/110</span></div>
+        <div class="cv-item"><strong>Attestato di competenza – Specialista degli impianti edili</strong><span>Consorzio Scuole Lavoro Milano · 2009</span></div>
+        <div class="cv-item"><strong>Diploma di Geometra</strong><span>Istituto Tecnico per Geometri Leonardo da Vinci · 2008</span></div>
+        <div class="cv-item"><strong>Lingue</strong><span>Italiano madrelingua · Inglese B2</span></div>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Tecnologie</h2>
+      <p class="cv-skills">
+        Ignition · Oracle NetSuite · REST/SOAP API · Oracle / SQL · Python · JavaScript · Microsoft Copilot ·
+        Copilot Studio · Jira · Excel / Power Query · ESRI ArcGIS · FME
+      </p>
+    </section>
+
+    <div class="cv-footer"><span>linkedin.com/in/tindaro-giuseppe-gatto-05154455</span><span>Pagina 2 / 2</span></div>
+  </div>
+</section>
+
+
+<section class="cv-document cv-en" aria-hidden="true">
+  <div class="cv-page">
+    <header class="cv-header">
+      <h1>Tindaro Giuseppe Gatto</h1>
+      <div class="cv-title">Senior Technical Analyst | Data Architecture | Industrial Data | OT/IT Integration</div>
+      <div class="cv-contact">
+        <span>Albenga (SV), Italy</span>
+        <span>tindaro.gatto@gmail.com</span>
+        <span>linkedin.com/in/tindaro-giuseppe-gatto-05154455</span>
+        <span>tgatto.github.io</span>
+      </div>
+    </header>
+
+    <section class="cv-section">
+      <h2>Professional Profile</h2>
+      <p class="cv-profile">
+        Senior Technical Analyst with experience in technical and functional analysis, system integration,
+        industrial automation, enterprise applications and technical coordination. My background combines
+        ERP-to-industry integration, solution design, team coordination and process digitalization. My current
+        focus is Data Architecture &amp; Governance, Industrial Data and OT/IT integration, with particular
+        attention to data quality, traceability and usability.
+      </p>
+    </section>
+
+    <section class="cv-section">
+      <h2>Core Competencies</h2>
+      <p class="cv-skills">
+        Data Architecture · Industrial Data · Data Governance · Data Modeling · OT/IT Integration ·
+        System Integration · Solution Design · Integration Architecture · Ignition · SCADA/MES ·
+        Industrial Automation · Oracle NetSuite · REST/SOAP API · SQL / Oracle · Python · JavaScript ·
+        Microsoft Copilot · Copilot Studio · Technical Leadership · Team Coordination
+      </p>
+    </section>
+
+    <section class="cv-section">
+      <h2>Professional Experience</h2>
+
+      <article class="cv-role">
+        <div class="cv-role-head">
+          <div>
+            <div class="cv-role-title">Senior Technical Analyst | Data Architecture &amp; Industrial Data</div>
+            <div class="cv-company">Relatech S.p.A.</div>
+          </div>
+          <div class="cv-meta">Jan 2026 – Present<br>Genoa / Hybrid</div>
+        </div>
+        <p>Cross-functional role between Data Architecture and Industry, focused on industrial data, governance and platform integration.</p>
+        <ul>
+          <li>Support for the definition of data architectures and information models.</li>
+          <li>Support for solution design of integrated architectures across OT/IT systems and data platforms.</li>
+          <li>Analysis and organization of industrial data domains and application of Data Governance principles.</li>
+          <li>Collaboration across Data and Industry teams, focusing on data quality, traceability and usability.</li>
+        </ul>
+      </article>
+
+      <article class="cv-role">
+        <div class="cv-role-head">
+          <div>
+            <div class="cv-role-title">Senior Technical Analyst | AI &amp; Automation Trainer</div>
+            <div class="cv-company">Relatech S.p.A.</div>
+          </div>
+          <div class="cv-meta">Jul 2025 – Dec 2025<br>Genoa / Remote</div>
+        </div>
+        <p>Cross-functional role between applied artificial intelligence and industrial automation, covering training, design and technical coordination.</p>
+        <ul>
+          <li>AI Awareness and Microsoft Copilot Studio training for responsible adoption of AI solutions in enterprise environments.</li>
+          <li>Support for the definition of guidelines and AI integration processes within operational workflows.</li>
+          <li>Technical coordination of Ignition-based projects and support for SCADA/MES architectures.</li>
+          <li>Design of solutions for industrial data collection, management and visualization, including technical training on Ignition.</li>
+        </ul>
+      </article>
+
+      <article class="cv-role">
+        <div class="cv-role-head">
+          <div>
+            <div class="cv-role-title">Senior Technical Analyst | Team Coordinator</div>
+            <div class="cv-company">Relatech S.p.A.</div>
+          </div>
+          <div class="cv-meta">Mar 2020 – Jul 2025<br>Genoa / Hybrid</div>
+        </div>
+        <p>Analysis, design and technical coordination of enterprise and industrial solutions, with a strong focus on Oracle NetSuite, integrations and process digitalization.</p>
+        <ul>
+          <li>Requirements analysis, technical specifications and definition of software architectures and scalable solutions.</li>
+          <li>Development team coordination: task assignment, code review, technical support and deliverable quality control.</li>
+          <li>Design and coordination of integrations through REST/SOAP APIs, databases and external services.</li>
+          <li>Implementation and customization of Oracle NetSuite across Finance, CRM, Support Case, Distribution and Manufacturing.</li>
+          <li>ERP–Ignition integration and support for industrial automation / Industrial IoT initiatives.</li>
+        </ul>
+      </article>
+    </section>
+
+    <div class="cv-footer"><span>tgatto.github.io</span><span>Page 1 / 2</span></div>
+  </div>
+
+  <div class="cv-page">
+    <section class="cv-section">
+      <h2>Previous Experience</h2>
+
+      <article class="cv-role">
+        <div class="cv-role-head">
+          <div>
+            <div class="cv-role-title">Functional Analyst</div>
+            <div class="cv-company">NTT DATA Italia</div>
+          </div>
+          <div class="cv-meta">Apr 2019 – Feb 2020<br>Milan</div>
+        </div>
+        <p>Business and functional analysis for enterprise solutions in the Energy sector.</p>
+        <ul>
+          <li>User requirements gathering, functional analysis and project documentation.</li>
+          <li>Analysis and development support for custom features on the CARTESIO product for SNAM Rete Gas.</li>
+        </ul>
+      </article>
+
+      <article class="cv-role">
+        <div class="cv-role-head">
+          <div>
+            <div class="cv-role-title">GIS Analyst &amp; JavaScript Developer / Team Leader</div>
+            <div class="cv-company">Digid Group S.p.A.</div>
+          </div>
+          <div class="cv-meta">Jul 2017 – Apr 2019<br>Milan</div>
+        </div>
+        <ul>
+          <li>Geospatial data quality analysis, data cleansing, technical documentation and User Acceptance Testing.</li>
+          <li>Development of ESRI Web AppBuilder viewers and widgets using JavaScript, HTML5, CSS and JSON.</li>
+          <li>Projects for Regione Lombardia, A2A Unareti and NTT DATA / SNAM.</li>
+        </ul>
+      </article>
+
+      <article class="cv-role">
+        <div class="cv-role-head">
+          <div>
+            <div class="cv-role-title">GIS Analyst</div>
+            <div class="cv-company">ARCADIA S.I.T.</div>
+          </div>
+          <div class="cv-meta">Jul 2009 – Sep 2013<br>Milan</div>
+        </div>
+        <ul>
+          <li>Electrical network management and digitalization using ArcGIS, AutoCAD and FME.</li>
+          <li>Implementation of the Milan Electrical Network GeoDatabase for A2A.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Certifications</h2>
+      <div class="cv-grid-2">
+        <div class="cv-item"><strong>Ignition Core 8.1 Certification</strong><span>Inductive Automation · 2024</span></div>
+        <div class="cv-item"><strong>Oracle NetSuite SuiteFoundation</strong><span>Certification no. 24996 · 2022</span></div>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Education</h2>
+      <div class="cv-grid-2">
+        <div class="cv-item"><strong>Bachelor's Degree in Prevention Techniques in the Environment and Workplace</strong><span>University of Pavia · 2018 · 104/110</span></div>
+        <div class="cv-item"><strong>Professional Certificate – Building Systems Specialist</strong><span>Consorzio Scuole Lavoro Milano · 2009</span></div>
+        <div class="cv-item"><strong>Surveyor Diploma</strong><span>Istituto Tecnico per Geometri Leonardo da Vinci · 2008</span></div>
+        <div class="cv-item"><strong>Languages</strong><span>Italian: native · English: B2</span></div>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Technologies</h2>
+      <p class="cv-skills">
+        Ignition · Oracle NetSuite · REST/SOAP API · Oracle / SQL · Python · JavaScript · Microsoft Copilot ·
+        Copilot Studio · Jira · Excel / Power Query · ESRI ArcGIS · FME
+      </p>
+    </section>
+
+    <div class="cv-footer"><span>linkedin.com/in/tindaro-giuseppe-gatto-05154455</span><span>Page 2 / 2</span></div>
+  </div>
+</section>
+
 </body>
 </html>
