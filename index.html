@@ -968,6 +968,59 @@ button,input{font:inherit}
   }
 }
 
+
+/* Mobile header refinement: keep identity on its own row above controls */
+@media(max-width:850px){
+  .topbar{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:12px !important;
+  }
+
+  .brandmark{
+    width:100% !important;
+    min-width:0 !important;
+    order:1 !important;
+    justify-content:flex-start !important;
+    align-items:center !important;
+  }
+
+  .brandmark>span{
+    line-height:1.2 !important;
+    overflow-wrap:normal !important;
+    word-break:normal !important;
+  }
+
+  .actions{
+    width:100% !important;
+    order:2 !important;
+    display:flex !important;
+    justify-content:flex-end !important;
+    align-items:flex-start !important;
+    gap:8px !important;
+    flex-wrap:wrap !important;
+  }
+
+  .print-menu{
+    width:auto !important;
+    margin-left:auto !important;
+    align-items:flex-end !important;
+  }
+
+  .print-menu[open]{
+    width:100% !important;
+  }
+
+  .print-menu[open] .print-summary{
+    margin-left:auto !important;
+  }
+
+  .print-menu[open] .print-menu-list{
+    width:100% !important;
+  }
+}
+
 </style>
 </head>
 <body>
