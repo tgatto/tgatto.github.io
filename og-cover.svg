@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#102f48"/>
+    <stop offset=".72" stop-color="#0a66c2"/>
+    <stop offset="1" stop-color="#148da8"/>
+  </linearGradient>
+  <radialGradient id="glow" cx=".84" cy=".22" r=".45">
+    <stop stop-color="#7cc8ff" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#7cc8ff" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#glow)"/>
+<circle cx="1030" cy="90" r="165" fill="none" stroke="white" stroke-opacity=".16"/>
+<circle cx="1030" cy="90" r="215" fill="none" stroke="white" stroke-opacity=".08"/>
+<text x="84" y="180" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="700" letter-spacing="3">PROFESSIONAL PORTFOLIO</text>
+<text x="84" y="275" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="66" font-weight="700">Tindaro Giuseppe Gatto</text>
+<text x="84" y="340" fill="#dceeff" font-family="Arial,Helvetica,sans-serif" font-size="31">Senior Technical Analyst</text>
+<text x="84" y="410" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="27">Data Architecture · Industrial Data · OT/IT Integration</text>
+<text x="84" y="465" fill="#dceeff" font-family="Arial,Helvetica,sans-serif" font-size="24">Industrial Automation · System Integration · Technical Leadership</text>
+<rect x="84" y="515" width="274" height="3" rx="2" fill="#7cc8ff"/>
+<text x="84" y="566" fill="#dceeff" font-family="Arial,Helvetica,sans-serif" font-size="22">tgatto.github.io</text>
+</svg>

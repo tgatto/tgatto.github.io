@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio professionale di Tindaro Giuseppe Gatto: Senior Technical Analyst con focus su Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.">
+<meta name="author" content="Tindaro Giuseppe Gatto">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0a66c2">
+<link rel="canonical" href="https://tgatto.github.io/">
+
+<!-- LinkedIn / Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tindaro Giuseppe Gatto — Portfolio">
+<meta property="og:title" content="Tindaro Giuseppe Gatto | Data Architecture, Industrial Data & OT/IT Integration">
+<meta property="og:description" content="Portfolio professionale: Data Architecture, Industrial Data, OT/IT Integration, Industrial Automation e Technical Leadership.">
+<meta property="og:url" content="https://tgatto.github.io/">
+<meta property="og:image" content="https://tgatto.github.io/og-cover.svg">
+
+<!-- Social preview fallback -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tindaro Giuseppe Gatto | Professional Portfolio">
+<meta name="twitter:description" content="Data Architecture · Industrial Data · OT/IT Integration · Technical Leadership">
+<meta name="twitter:image" content="https://tgatto.github.io/og-cover.svg">
+
+<!-- Inline favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%230a66c2'/%3E%3Cstop offset='1' stop-color='%23148da8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial,sans-serif' font-size='25' font-weight='700' fill='white'%3ETG%3C/text%3E%3C/svg%3E">
+
+<title>Tindaro Giuseppe Gatto | Data Architecture, Industrial Data & OT/IT Integration</title>
+<style>
+:root{
+  --bg:#f3f6f9; --surface:#ffffff; --surface-2:#f8fafc; --text:#14202b; --muted:#667482;
+  --line:#dfe6ec; --brand:#0a66c2; --brand-2:#113a5c; --brand-soft:#eaf4ff;
+  --shadow:0 18px 60px rgba(20,32,43,.10); --radius:24px;
+}
+[data-theme="dark"]{
+  --bg:#0c1218; --surface:#131b23; --surface-2:#0f171e; --text:#f2f6f9; --muted:#a8b4bf;
+  --line:#26323d; --brand:#67b4ff; --brand-2:#0e2d45; --brand-soft:#172a3b;
+  --shadow:0 18px 60px rgba(0,0,0,.30);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.55;
+}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.page{max-width:1180px;margin:auto;padding:24px 20px 72px}
+.topbar{
+  position:sticky;top:10px;z-index:30;display:flex;justify-content:space-between;align-items:center;
+  gap:12px;margin-bottom:16px;padding:10px 12px;border:1px solid color-mix(in srgb,var(--line) 75%,transparent);
+  background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(14px);
+  border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.05)
+}
+.brandmark{display:flex;align-items:center;gap:10px;font-weight:800}
+.avatar{
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  color:#fff;background:linear-gradient(135deg,var(--brand),#00a3c7);font-size:.82rem;letter-spacing:.03em
+}
+.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.btn{
+  border:1px solid var(--line);background:var(--surface);color:var(--text);
+  padding:9px 13px;border-radius:999px;cursor:pointer;font-weight:700;transition:.2s ease
+}
+.btn:hover{transform:translateY(-1px);border-color:var(--brand);color:var(--brand)}
+.hero{
+  position:relative;overflow:hidden;padding:58px;border-radius:32px;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(77,177,255,.35),transparent 27%),
+    radial-gradient(circle at 70% 80%,rgba(0,222,190,.16),transparent 28%),
+    linear-gradient(135deg,#102f48,#0a66c2 72%,#148da8);
+  color:white;box-shadow:var(--shadow)
+}
+.hero:after{
+  content:"";position:absolute;right:-110px;top:-80px;width:330px;height:330px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.18);box-shadow:0 0 0 48px rgba(255,255,255,.04),0 0 0 96px rgba(255,255,255,.025)
+}
+.eyebrow{font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;font-weight:800;opacity:.78}
+.hero h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:.98;margin:10px 0 16px;letter-spacing:-.045em;max-width:820px}
+.hero .role{font-size:clamp(1.08rem,2.4vw,1.38rem);max-width:850px;opacity:.96}
+.hero .intro{max-width:760px;margin-top:20px;color:rgba(255,255,255,.83)}
+.hero-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;position:relative;z-index:2}
+.hero-link{padding:9px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.10)}
+.layout{display:grid;grid-template-columns:290px 1fr;gap:22px;margin-top:22px}
+.sidebar{position:sticky;top:84px;height:max-content}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)
+}
+.nav a{display:block;padding:9px 2px;color:var(--muted);font-weight:750}
+.nav a:hover{color:var(--brand)}
+.divider{border:0;border-top:1px solid var(--line);margin:18px 0}
+.small{font-size:.88rem;color:var(--muted)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{
+  border:1px solid var(--line);background:var(--surface-2);border-radius:999px;padding:7px 10px;
+  font-size:.88rem;font-weight:700;color:var(--muted)
+}
+.pill.active{background:var(--brand-soft);color:var(--brand);border-color:color-mix(in srgb,var(--brand) 45%,var(--line))}
+.section{scroll-margin-top:90px}
+.section+.section{margin-top:22px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.section-head h2{margin:0;font-size:1.34rem;letter-spacing:-.02em}
+.section-head:after{content:"";height:1px;background:var(--line);flex:1}
+.about{font-size:1.05rem;margin:0}
+.expertise{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.expertise-card{padding:18px;border-radius:18px;background:var(--surface-2);border:1px solid var(--line)}
+.expertise-card h3{margin:0 0 6px;font-size:1rem}
+.expertise-card p{margin:0;color:var(--muted);font-size:.94rem}
+.timeline{position:relative;margin-left:7px}
+.timeline:before{content:"";position:absolute;left:8px;top:9px;bottom:8px;width:2px;background:var(--line)}
+.job{position:relative;padding:0 0 22px 34px}
+.job:last-child{padding-bottom:0}
+.job:before{
+  content:"";position:absolute;left:0;top:5px;width:18px;height:18px;border-radius:50%;
+  background:var(--surface);border:4px solid var(--brand)
+}
+.job-card{border:1px solid var(--line);background:var(--surface-2);border-radius:18px;padding:18px;transition:.2s ease}
+.job-card:hover{border-color:color-mix(in srgb,var(--brand) 45%,var(--line));transform:translateY(-1px)}
+.job.dim{opacity:.28}
+.job.highlight .job-card{box-shadow:inset 3px 0 0 var(--brand)}
+.job-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.job h3{margin:0;font-size:1.08rem;line-height:1.35}
+.company{color:var(--brand);font-weight:800;margin-top:2px}
+.meta{color:var(--muted);font-size:.92rem;white-space:nowrap;text-align:right}
+.job-summary{margin:10px 0 0}
+.toggle{border:0;background:transparent;color:var(--brand);padding:0;margin-top:8px;cursor:pointer;font-weight:800}
+.details{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s ease}
+.details>div{overflow:hidden}
+.job.open .details{grid-template-rows:1fr}
+.details ul{margin:10px 0 0;padding-left:20px}
+.details li+li{margin-top:5px}
+.search{width:100%;border:1px solid var(--line);background:var(--surface-2);color:var(--text);padding:10px 12px;border-radius:12px;margin-bottom:14px}
+.stack{display:flex;flex-wrap:wrap;gap:8px}
+.stack span{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface-2);font-size:.89rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.item{padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--surface-2)}
+.item h3{margin:0 0 5px;font-size:1rem}
+.item p{margin:0;color:var(--muted)}
+.footer{margin-top:22px;text-align:center;color:var(--muted);font-size:.9rem}
+
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.project-card{
+  padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--surface-2);
+  position:relative;overflow:hidden
+}
+.project-card:before{
+  content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(var(--brand),#12a6a6)
+}
+.project-card h3{margin:0 0 7px;font-size:1.02rem}
+.project-card p{margin:0;color:var(--muted);font-size:.94rem}
+.project-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.project-tags span{font-size:.78rem;font-weight:750;padding:5px 8px;border-radius:999px;background:var(--brand-soft);color:var(--brand)}
+.linkedin-cta{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
+  background:#0a66c2;color:#fff;font-weight:800;border:1px solid rgba(255,255,255,.2)
+}
+.linkedin-cta:hover{transform:translateY(-1px);filter:brightness(1.04)}
+.print-only{display:none}
+
+@media(max-width:850px){
+  .layout{grid-template-columns:1fr}.sidebar{position:static}.hero{padding:34px}.expertise,.grid2,.project-grid{grid-template-columns:1fr}.job-top{display:block}.meta{white-space:normal;text-align:left;margin-top:4px}.topbar{position:static}
+}
+@media print{
+  @page{size:A4;margin:12mm 12mm 13mm}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  body{background:#fff!important;color:#111!important;font-size:10.2pt;line-height:1.36}
+  .page{max-width:none!important;padding:0!important}
+  .topbar,.sidebar,.toggle,.search,.footer{display:none!important}
+  .layout{display:block!important;margin-top:10mm}
+  .hero{
+    background:linear-gradient(135deg,#102f48,#0a66c2 72%,#148da8)!important;
+    color:#fff!important;padding:13mm 13mm 11mm!important;border-radius:0!important;
+    box-shadow:none!important;border:0!important;margin:0 0 7mm!important
+  }
+  .hero:after{display:none!important}
+  .hero h1{font-size:27pt!important;margin:2mm 0 3mm!important}
+  .hero .role{font-size:12.5pt!important}
+  .hero .intro{color:#eef6ff!important;margin-top:4mm!important}
+  .hero-links{margin-top:5mm!important}
+  .hero-link{border:1px solid rgba(255,255,255,.32)!important;background:rgba(255,255,255,.10)!important;color:#fff!important;padding:2mm 3mm!important}
+  .card{
+    box-shadow:none!important;border:0!important;border-radius:0!important;
+    padding:0!important;background:#fff!important
+  }
+  .section{margin:0 0 7mm!important;scroll-margin-top:0!important}
+  .section+.section{margin-top:0!important}
+  .section-head{margin-bottom:3mm!important}
+  .section-head h2{font-size:14pt!important;color:#0a4f8a!important}
+  .section-head:after{background:#bdd3e6!important}
+  .about{font-size:10.4pt!important}
+  .expertise,.project-grid,.grid2{grid-template-columns:1fr 1fr!important;gap:3mm!important}
+  .expertise-card,.project-card,.item,.job-card{
+    background:#fff!important;border:1px solid #d8e1e8!important;
+    box-shadow:none!important;border-radius:3mm!important
+  }
+  .expertise-card,.project-card,.item{padding:3.5mm!important}
+  .project-card:before{width:1.2mm!important}
+  .timeline{margin-left:0!important}
+  .timeline:before{left:2.5mm!important;background:#d8e1e8!important}
+  .job{padding:0 0 4mm 9mm!important;break-inside:avoid-page}
+  .job:before{left:0!important;top:1.2mm!important;width:5mm!important;height:5mm!important;border-width:1.2mm!important}
+  .job-card{padding:4mm!important}
+  .job h3{font-size:11pt!important}
+  .company{color:#0a66c2!important}
+  .meta{font-size:9pt!important}
+  .job-summary{margin:2.2mm 0 0!important}
+  .details{grid-template-rows:1fr!important}
+  .details ul{margin:2mm 0 0!important;padding-left:5mm!important}
+  .details li+li{margin-top:1mm!important}
+  .stack{gap:1.5mm!important}
+  .stack span{padding:1.4mm 2.3mm!important;border-color:#d8e1e8!important;background:#f7fafc!important;font-size:8.8pt!important}
+  .project-tags{margin-top:2mm!important;gap:1.3mm!important}
+  .project-tags span{padding:1mm 1.8mm!important;font-size:8pt!important}
+  .print-only{display:block!important}
+  a{color:inherit!important;text-decoration:none!important}
+  #profilo,#focus,#projects,#certificazioni,#formazione{break-inside:avoid-page}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div class="brandmark"><div class="avatar">TG</div><span>Tindaro Giuseppe Gatto</span></div>
+    <div class="actions">
+      <button class="btn" id="themeBtn">🌙 Tema</button>
+      <button class="btn" id="expandBtn">＋ Espandi</button>
+      <button class="btn" onclick="window.print()">🖨 Stampa / PDF</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow">Portfolio professionale</div>
+    <h1>Tindaro Giuseppe Gatto</h1>
+    <div class="role">Senior Technical Analyst · Data Architecture · Industrial Data · OT/IT Integration</div>
+    <p class="intro">
+      Profilo tecnico-funzionale con esperienza in system integration, automazione industriale, applicazioni enterprise e coordinamento tecnico.
+      Oggi il focus è sull'incontro tra mondo Industry e architetture dati, con attenzione a governance, qualità, integrazione e valorizzazione del dato industriale.
+    </p>
+    <div class="hero-links">
+      <span class="hero-link">📍 Genova / Ibrido</span>
+      <button class="hero-link" style="color:white;cursor:pointer" data-copy="tindaro.gatto@gmail.com">✉ tindaro.gatto@gmail.com</button>
+      <a class="linkedin-cta" href="https://www.linkedin.com/in/tindaro-giuseppe-gatto-05154455/" target="_blank" rel="noopener">in&nbsp; LinkedIn</a>
+    </div>
+  </header>
+  <div class="print-only" style="margin:0 0 7mm;font-size:9pt;color:#4a5966">
+    Portfolio professionale · Tindaro Giuseppe Gatto · LinkedIn: linkedin.com/in/tindaro-giuseppe-gatto-05154455/
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="card">
+        <strong>Navigazione</strong>
+        <nav class="nav">
+          <a href="#profilo">Profilo</a>
+          <a href="#focus">Aree di focus</a>
+          <a href="#esperienza">Esperienza</a>
+          <a href="#projects">Selected Projects</a>
+          <a href="#competenze">Competenze</a>
+          <a href="#certificazioni">Certificazioni</a>
+          <a href="#formazione">Formazione</a>
+        </nav>
+        <hr class="divider">
+        <strong>Filtra esperienza</strong>
+        <div class="pills" id="focusFilters" style="margin-top:10px">
+          <button class="pill" data-area="data">Data</button>
+          <button class="pill" data-area="ot">OT/IT</button>
+          <button class="pill" data-area="ai">AI</button>
+          <button class="pill" data-area="erp">ERP</button>
+          <button class="pill" data-area="leadership">Leadership</button>
+        </div>
+        <p class="small">Seleziona un focus per evidenziare le esperienze più rilevanti.</p>
+      </div>
+    </aside>
+
+    <main>
+      <section id="profilo" class="card section">
+        <div class="section-head"><h2>Profilo</h2></div>
+        <p class="about">
+          Senior Technical Analyst con esperienza in analisi tecnica e funzionale, system integration, automazione industriale,
+          applicazioni enterprise e coordinamento di team. Nel percorso professionale ho lavorato sull'integrazione tra ERP,
+          piattaforme industriali, API, database e sistemi OT. Attualmente opero nell'ambito Data Architecture &amp; Governance,
+          con focus sul dato industriale e sul collegamento tra sistemi sorgente, piattaforme dati e domini informativi.
+        </p>
+      </section>
+
+      <section id="focus" class="card section">
+        <div class="section-head"><h2>Aree di focus</h2></div>
+        <div class="expertise">
+          <div class="expertise-card"><h3>Data Architecture &amp; Industrial Data</h3><p>Architetture dati, modelli informativi, domini industriali, governance, qualità e tracciabilità.</p></div>
+          <div class="expertise-card"><h3>OT/IT &amp; System Integration</h3><p>Integrazione tra sistemi industriali, applicazioni enterprise, API, database e piattaforme dati.</p></div>
+          <div class="expertise-card"><h3>Industrial Automation</h3><p>Ignition, SCADA/MES, raccolta, gestione e visualizzazione del dato industriale.</p></div>
+          <div class="expertise-card"><h3>Technical Leadership</h3><p>Coordinamento tecnico, analisi requisiti, solution design, supporto ai team e qualità dei deliverable.</p></div>
+        </div>
+      </section>
+
+      <section id="esperienza" class="card section">
+        <div class="section-head"><h2>Esperienza</h2></div>
+        <div class="timeline">
+
+          <article class="job open" data-areas="data ot leadership">
+            <div class="job-card">
+              <div class="job-top">
+                <div><h3>Senior Technical Analyst | Data Architecture &amp; Industrial Data</h3><div class="company">Relatech S.p.A.</div></div>
+                <div class="meta">Gen 2026 – Presente<br>Genova / Ibrido</div>
+              </div>
+              <p class="job-summary">Ruolo trasversale tra Data Architecture e mondo Industry, con focus sul dato industriale, sulla governance e sull'integrazione tra piattaforme.</p>
+              <button class="toggle">Nascondi dettagli</button>
+              <div class="details"><div><ul>
+                <li>Supporto alla definizione di architetture dati e modelli informativi.</li>
+                <li>Supporto al solution design di architetture integrate tra sistemi OT/IT e piattaforme dati.</li>
+                <li>Analisi e organizzazione dei domini dati industriali.</li>
+                <li>Applicazione di principi di Data Governance e collaborazione tra team Data e Industry.</li>
+                <li>Supporto alla qualità, tracciabilità e fruibilità del dato.</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="job" data-areas="ai ot leadership">
+            <div class="job-card">
+              <div class="job-top">
+                <div><h3>Senior Technical Analyst | AI &amp; Automation Trainer</h3><div class="company">Relatech S.p.A.</div></div>
+                <div class="meta">Lug 2025 – Dic 2025<br>Genova / Remoto</div>
+              </div>
+              <p class="job-summary">Ruolo trasversale tra intelligenza artificiale applicata e automazione industriale, con attività di formazione, progettazione e coordinamento tecnico.</p>
+              <button class="toggle">Mostra dettagli</button>
+              <div class="details"><div><ul>
+                <li>Formazione in AI Awareness, con focus su Microsoft Copilot Studio e adozione consapevole di soluzioni AI in ambito aziendale.</li>
+                <li>Supporto alla definizione di linee guida e processi di integrazione dell'AI nei flussi operativi.</li>
+                <li>Coordinamento tecnico di progetti basati su Ignition by Inductive Automation e supporto ad architetture SCADA/MES.</li>
+                <li>Progettazione di soluzioni per raccolta, gestione e visualizzazione dei dati industriali e formazione tecnica su Ignition.</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="job" data-areas="erp ot leadership">
+            <div class="job-card">
+              <div class="job-top">
+                <div><h3>Senior Technical Analyst | Team Coordinator</h3><div class="company">Relatech S.p.A.</div></div>
+                <div class="meta">Mar 2020 – Lug 2025<br>Genova / Ibrido</div>
+              </div>
+              <p class="job-summary">Analisi, progettazione e coordinamento tecnico di soluzioni enterprise e industriali, con particolare focus su Oracle NetSuite, integrazioni e digitalizzazione dei processi.</p>
+              <button class="toggle">Mostra dettagli</button>
+              <div class="details"><div><ul>
+                <li>Analisi requisiti, specifiche tecniche e definizione di architetture software e soluzioni scalabili.</li>
+                <li>Coordinamento del team di sviluppo: assegnazione task, code review, supporto tecnico e controllo dei deliverable.</li>
+                <li>Progettazione e coordinamento di integrazioni tramite API REST/SOAP, database e servizi esterni.</li>
+                <li>Implementazione e customizzazione Oracle NetSuite in ambito Finance, CRM, Support Case, Distribuzione e Produzione.</li>
+                <li>Integrazione ERP–Ignition e supporto a iniziative di automazione industriale / Industrial IoT.</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="job" data-areas="data erp">
+            <div class="job-card">
+              <div class="job-top">
+                <div><h3>Functional Analyst</h3><div class="company">NTT DATA Italia</div></div>
+                <div class="meta">Apr 2019 – Feb 2020<br>Milano</div>
+              </div>
+              <p class="job-summary">Business e functional analysis per soluzioni enterprise nel settore Energy.</p>
+              <button class="toggle">Mostra dettagli</button>
+              <div class="details"><div><ul>
+                <li>Raccolta requisiti utente, analisi funzionale e redazione della documentazione di progetto.</li>
+                <li>Analisi e supporto allo sviluppo di funzionalità custom sul prodotto CARTESIO per SNAM Rete Gas.</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="job" data-areas="data leadership">
+            <div class="job-card">
+              <div class="job-top">
+                <div><h3>GIS Analyst &amp; JavaScript Developer / Team Leader</h3><div class="company">Digid Group S.p.A.</div></div>
+                <div class="meta">Lug 2017 – Apr 2019<br>Milano</div>
+              </div>
+              <p class="job-summary">Analisi e sviluppo di soluzioni GIS/Web GIS per clienti enterprise e Pubblica Amministrazione.</p>
+              <button class="toggle">Mostra dettagli</button>
+              <div class="details"><div><ul>
+                <li>Analisi qualità dati geografici, data cleansing, documentazione tecnica e User Acceptance Test.</li>
+                <li>Sviluppo di viewer e widget ESRI Web AppBuilder (JavaScript, HTML5, CSS, JSON).</li>
+                <li>Progetti per Regione Lombardia, A2A Unareti e NTT DATA / SNAM.</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+          <article class="job" data-areas="data">
+            <div class="job-card">
+              <div class="job-top">
+                <div><h3>GIS Analyst</h3><div class="company">ARCADIA S.I.T.</div></div>
+                <div class="meta">Lug 2009 – Set 2013<br>Milano</div>
+              </div>
+              <p class="job-summary">Attività GIS per la gestione e digitalizzazione della rete elettrica.</p>
+              <button class="toggle">Mostra dettagli</button>
+              <div class="details"><div><ul>
+                <li>Acquisizione e completamento della cartografia e della rete elettrica.</li>
+                <li>Trasformazione dati da AutoCAD ad ArcGIS tramite FME.</li>
+                <li>Progetto principale: implementazione del GeoDatabase della Rete Elettrica Milanese per A2A.</li>
+              </ul></div></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+
+      <section id="projects" class="card section">
+        <div class="section-head"><h2>Selected Projects</h2></div>
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>Industrial Data &amp; Data Architecture</h3>
+            <p>Supporto alla definizione di architetture dati, modelli informativi e integrazioni tra sistemi OT/IT e piattaforme dati, con focus sul dato industriale e sulla governance.</p>
+            <div class="project-tags"><span>Industrial Data</span><span>Data Architecture</span><span>OT/IT</span></div>
+          </article>
+          <article class="project-card">
+            <h3>ERP–Industry Integration</h3>
+            <p>Analisi e coordinamento di integrazioni tra Oracle NetSuite, sistemi applicativi e piattaforme industriali, inclusi flussi API, database e connessioni con Ignition.</p>
+            <div class="project-tags"><span>Oracle NetSuite</span><span>Ignition</span><span>System Integration</span></div>
+          </article>
+          <article class="project-card">
+            <h3>Industrial Automation &amp; Ignition</h3>
+            <p>Coordinamento tecnico e supporto a soluzioni SCADA/MES per raccolta, gestione e visualizzazione dei dati industriali, con attività di formazione tecnica.</p>
+            <div class="project-tags"><span>Ignition</span><span>SCADA/MES</span><span>Industrial Automation</span></div>
+          </article>
+          <article class="project-card">
+            <h3>AI Awareness &amp; Enterprise Adoption</h3>
+            <p>Formazione su AI generativa e Microsoft Copilot Studio, con attenzione all'adozione consapevole, ai flussi operativi e all'integrazione con processi aziendali.</p>
+            <div class="project-tags"><span>AI Awareness</span><span>Copilot Studio</span><span>Training</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="competenze" class="card section">
+        <div class="section-head"><h2>Competenze &amp; tecnologie</h2></div>
+        <input class="search" id="skillSearch" placeholder="Filtra competenze…" aria-label="Filtra competenze">
+        <div class="stack" id="skills">
+          <span>Industrial Data</span><span>Data Architecture</span><span>Data Governance</span><span>Data Modeling</span>
+          <span>OT/IT Integration</span><span>System Integration</span><span>Solution Design</span><span>Integration Architecture</span>
+          <span>Ignition</span><span>SCADA/MES</span><span>Industrial Automation</span><span>Oracle NetSuite</span>
+          <span>REST/SOAP API</span><span>SQL / Oracle</span><span>Python</span><span>JavaScript</span>
+          <span>Microsoft Copilot</span><span>Copilot Studio</span><span>Technical Leadership</span><span>Team Coordination</span>
+          <span>Jira</span><span>Excel / Power Query</span><span>ESRI ArcGIS</span><span>FME</span>
+        </div>
+      </section>
+
+      <section id="certificazioni" class="card section">
+        <div class="section-head"><h2>Certificazioni</h2></div>
+        <div class="grid2">
+          <div class="item"><h3>Ignition Core 8.1 Certification</h3><p>Inductive Automation · 2024</p></div>
+          <div class="item"><h3>Oracle NetSuite SuiteFoundation</h3><p>Certificazione n. 24996 · 2022</p></div>
+        </div>
+      </section>
+
+      <section id="formazione" class="card section">
+        <div class="section-head"><h2>Formazione</h2></div>
+        <div class="grid2">
+          <div class="item"><h3>Laurea di 1° livello in Tecniche della prevenzione negli ambienti e nei luoghi di lavoro</h3><p>Università degli Studi di Pavia · 2018 · 104/110</p></div>
+          <div class="item"><h3>Attestato di competenza – Specialista degli impianti edili</h3><p>Consorzio Scuole Lavoro Milano · 2009</p></div>
+          <div class="item"><h3>Diploma di Geometra</h3><p>Istituto Tecnico per Geometri Leonardo da Vinci · 2008</p></div>
+          <div class="item"><h3>Lingue</h3><p>Italiano madrelingua · Inglese B2</p></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="footer">Portfolio professionale · Ultimo aggiornamento 2026</div>
+</div>
+
+<script>
+const root=document.documentElement;
+const themeBtn=document.getElementById('themeBtn');
+const saved=localStorage.getItem('portfolio-theme');
+if(saved) root.dataset.theme=saved;
+themeBtn.addEventListener('click',()=>{
+  const next=root.dataset.theme==='dark'?'light':'dark';
+  root.dataset.theme=next;
+  localStorage.setItem('portfolio-theme',next);
+});
+
+document.querySelectorAll('[data-copy]').forEach(el=>el.addEventListener('click',async()=>{
+  try{
+    await navigator.clipboard.writeText(el.dataset.copy);
+    const old=el.textContent; el.textContent='✓ Copiato';
+    setTimeout(()=>el.textContent=old,1200);
+  }catch(e){}
+}));
+
+document.querySelectorAll('.job .toggle').forEach(btn=>btn.addEventListener('click',()=>{
+  const job=btn.closest('.job');
+  job.classList.toggle('open');
+  btn.textContent=job.classList.contains('open')?'Nascondi dettagli':'Mostra dettagli';
+}));
+
+let allOpen=false;
+document.getElementById('expandBtn').addEventListener('click',e=>{
+  allOpen=!allOpen;
+  document.querySelectorAll('.job').forEach(job=>{
+    job.classList.toggle('open',allOpen);
+    job.querySelector('.toggle').textContent=allOpen?'Nascondi dettagli':'Mostra dettagli';
+  });
+  e.currentTarget.textContent=allOpen?'− Comprimi':'＋ Espandi';
+});
+
+document.querySelectorAll('#focusFilters [data-area]').forEach(btn=>btn.addEventListener('click',()=>{
+  const area=btn.dataset.area;
+  const active=btn.classList.toggle('active');
+  document.querySelectorAll('#focusFilters [data-area]').forEach(x=>{if(x!==btn)x.classList.remove('active')});
+  document.querySelectorAll('.job').forEach(job=>{
+    job.classList.remove('dim','highlight');
+    if(active){
+      const hit=(job.dataset.areas||'').split(' ').includes(area);
+      job.classList.add(hit?'highlight':'dim');
+    }
+  });
+}));
+
+document.getElementById('skillSearch').addEventListener('input',e=>{
+  const q=e.target.value.toLowerCase().trim();
+  document.querySelectorAll('#skills span').forEach(s=>{
+    s.style.display=s.textContent.toLowerCase().includes(q)?'inline-flex':'none';
+  });
+});
+</script>
+</body>
+</html>
