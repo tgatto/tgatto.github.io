@@ -952,21 +952,121 @@ button,input{font:inherit}
 }
 
 
-/* Robust mobile print menu: move the dropdown to document root */
+/* Mobile print sheet: root-level overlay, never hidden behind portfolio content */
+.mobile-print-overlay{
+  display:none;
+}
+
 @media(max-width:850px){
-  .print-menu-list.mobile-floating{
-    position:fixed !important;
-    display:grid !important;
-    gap:6px !important;
-    z-index:2147483647 !important;
-    margin:0 !important;
-    right:auto !important;
-    bottom:auto !important;
-    max-width:none !important;
-    background:var(--surface) !important;
-    border:1px solid var(--line) !important;
-    border-radius:16px !important;
-    box-shadow:0 20px 60px rgba(0,0,0,.35) !important;
+  /* The desktop dropdown is not used on phones. */
+  .print-menu .print-menu-list{
+    display:none !important;
+  }
+
+  .mobile-print-overlay{
+    position:fixed;
+    inset:0;
+    z-index:2147483647;
+    display:none;
+    align-items:flex-end;
+    justify-content:center;
+  }
+
+  .mobile-print-overlay.open{
+    display:flex;
+  }
+
+  .mobile-print-backdrop{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+    margin:0;
+    padding:0;
+    background:rgba(4,10,16,.58);
+    backdrop-filter:blur(3px);
+    -webkit-backdrop-filter:blur(3px);
+  }
+
+  .mobile-print-sheet{
+    position:relative;
+    z-index:1;
+    width:min(100% - 24px, 520px);
+    margin:0 12px 12px;
+    padding:14px;
+    border:1px solid var(--line);
+    border-radius:22px;
+    background:var(--surface);
+    color:var(--text);
+    box-shadow:0 24px 70px rgba(0,0,0,.42);
+  }
+
+  .mobile-print-sheet-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:4px 4px 10px;
+  }
+
+  .mobile-print-sheet-head>strong{
+    font-size:1rem;
+  }
+
+  .mobile-print-close{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:var(--surface-2);
+    color:var(--text);
+    font-size:1.5rem;
+    line-height:1;
+    cursor:pointer;
+  }
+
+  .mobile-print-option{
+    display:block;
+    width:100%;
+    border:0;
+    background:transparent;
+    color:var(--text);
+    text-align:left;
+    padding:14px;
+    border-radius:14px;
+    cursor:pointer;
+  }
+
+  .mobile-print-option + .mobile-print-option{
+    margin-top:4px;
+  }
+
+  .mobile-print-option:active{
+    background:var(--brand-soft);
+  }
+
+  .mobile-print-option strong{
+    display:block;
+    font-size:1rem;
+  }
+
+  .mobile-print-option span{
+    display:block;
+    margin-top:3px;
+    color:var(--muted);
+    font-size:.84rem;
+    font-weight:500;
+  }
+
+  body.mobile-print-open{
+    overflow:hidden;
+  }
+}
+
+@media print{
+  .mobile-print-overlay{
+    display:none !important;
   }
 }
 
@@ -1010,7 +1110,7 @@ button,input{font:inherit}
         <button class="btn" id="printMenuBtn" type="button" aria-haspopup="true" aria-expanded="false">
           <span data-i18n="printBtn">🖨 Stampa / PDF</span>
         </button>
-        <div class="print-menu-list" id="printMenuList" role="menu">
+        <div class="print-menu-list" role="menu">
           <button type="button" role="menuitem" onclick="printPortfolio('portfolio')">
             <strong data-i18n="printPortfolioMode">Versione Portfolio</strong>
             <span data-i18n="printPortfolioHelp">Grafica completa</span>
@@ -1615,9 +1715,11 @@ function printPortfolio(mode='portfolio'){
   document.body.dataset.printMode = mode;
   applyLanguage(currentLang);
 
-  if(typeof closePrintMenu === 'function'){
-    closePrintMenu();
-  }
+  const menu = document.getElementById('printMenu');
+  const menuBtn = document.getElementById('printMenuBtn');
+  if(menu) menu.classList.remove('open');
+  if(menuBtn) menuBtn.setAttribute('aria-expanded','false');
+  if(typeof closeMobilePrintOverlay === 'function') closeMobilePrintOverlay();
 
   requestAnimationFrame(()=>{
     requestAnimationFrame(()=>window.print());
@@ -1634,97 +1736,53 @@ window.addEventListener('afterprint', ()=>{
 
 const printMenu = document.getElementById('printMenu');
 const printMenuBtn = document.getElementById('printMenuBtn');
-const printMenuList = document.getElementById('printMenuList');
+const mobilePrintOverlay = document.getElementById('mobilePrintOverlay');
 
-function restorePrintMenuList(){
-  if(printMenu && printMenuList && printMenuList.parentElement !== printMenu){
-    printMenu.appendChild(printMenuList);
-  }
-  if(printMenuList){
-    printMenuList.classList.remove('mobile-floating');
-    printMenuList.style.removeProperty('left');
-    printMenuList.style.removeProperty('top');
-    printMenuList.style.removeProperty('width');
-  }
+function openMobilePrintOverlay(){
+  if(!mobilePrintOverlay) return;
+  mobilePrintOverlay.classList.add('open');
+  mobilePrintOverlay.setAttribute('aria-hidden','false');
+  document.body.classList.add('mobile-print-open');
 }
 
-function closePrintMenu(){
-  if(printMenu) printMenu.classList.remove('open');
-  if(printMenuBtn) printMenuBtn.setAttribute('aria-expanded','false');
-  restorePrintMenuList();
+function closeMobilePrintOverlay(){
+  if(!mobilePrintOverlay) return;
+  mobilePrintOverlay.classList.remove('open');
+  mobilePrintOverlay.setAttribute('aria-hidden','true');
+  document.body.classList.remove('mobile-print-open');
 }
 
-function floatPrintMenuOnMobile(){
-  if(!printMenu || !printMenuBtn || !printMenuList || window.innerWidth > 850) return;
-
-  // Move directly under BODY: this escapes the topbar's stacking context.
-  document.body.appendChild(printMenuList);
-  printMenuList.classList.add('mobile-floating');
-
-  const rect = printMenuBtn.getBoundingClientRect();
-  const pad = 12;
-  const width = Math.min(330, window.innerWidth - pad * 2);
-  printMenuList.style.width = `${width}px`;
-
-  let left = rect.right - width;
-  left = Math.max(pad, Math.min(left, window.innerWidth - width - pad));
-
-  const menuHeight = printMenuList.getBoundingClientRect().height;
-  const below = rect.bottom + 8;
-  const above = rect.top - menuHeight - 8;
-  let top = below;
-
-  if(below + menuHeight > window.innerHeight - pad && above >= pad){
-    top = above;
-  }else{
-    top = Math.max(pad, Math.min(below, window.innerHeight - menuHeight - pad));
-  }
-
-  printMenuList.style.left = `${left}px`;
-  printMenuList.style.top = `${top}px`;
-}
-
-if(printMenu && printMenuBtn && printMenuList){
+if(printMenu && printMenuBtn){
   printMenuBtn.addEventListener('click', (e)=>{
     e.stopPropagation();
 
-    if(printMenu.classList.contains('open')){
-      closePrintMenu();
+    if(window.innerWidth <= 850){
+      printMenu.classList.remove('open');
+      printMenuBtn.setAttribute('aria-expanded','false');
+      openMobilePrintOverlay();
       return;
     }
 
-    printMenu.classList.add('open');
-    printMenuBtn.setAttribute('aria-expanded','true');
-
-    if(window.innerWidth <= 850){
-      requestAnimationFrame(floatPrintMenuOnMobile);
-    }
+    const open = printMenu.classList.toggle('open');
+    printMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-
-  printMenuList.addEventListener('click', (e)=>e.stopPropagation());
 
   document.addEventListener('click', (e)=>{
-    if(!printMenu.contains(e.target) && !printMenuList.contains(e.target)){
-      closePrintMenu();
+    if(window.innerWidth > 850 && !printMenu.contains(e.target)){
+      printMenu.classList.remove('open');
+      printMenuBtn.setAttribute('aria-expanded','false');
     }
   });
-
-  window.addEventListener('resize', ()=>{
-    if(printMenu.classList.contains('open')){
-      if(window.innerWidth <= 850){
-        floatPrintMenuOnMobile();
-      }else{
-        restorePrintMenuList();
-      }
-    }
-  });
-
-  window.addEventListener('scroll', ()=>{
-    if(printMenu.classList.contains('open') && window.innerWidth <= 850){
-      floatPrintMenuOnMobile();
-    }
-  }, {passive:true});
 }
+
+window.addEventListener('resize', ()=>{
+  if(window.innerWidth > 850){
+    closeMobilePrintOverlay();
+  }else if(printMenu){
+    printMenu.classList.remove('open');
+    if(printMenuBtn) printMenuBtn.setAttribute('aria-expanded','false');
+  }
+});
 
 document.getElementById('skillSearch').addEventListener('input',e=>{
   const q=e.target.value.toLowerCase().trim();
@@ -2084,6 +2142,27 @@ document.getElementById('skillSearch').addEventListener('input',e=>{
     <div class="cv-footer"><span>Tindaro Giuseppe Gatto | CV 2026</span><span>Page 2 / 2</span></div>
   </div>
 </section>
+
+
+<div class="mobile-print-overlay" id="mobilePrintOverlay" aria-hidden="true">
+  <button class="mobile-print-backdrop" type="button" aria-label="Chiudi" onclick="closeMobilePrintOverlay()"></button>
+  <div class="mobile-print-sheet" role="dialog" aria-modal="true" aria-labelledby="mobilePrintTitle">
+    <div class="mobile-print-sheet-head">
+      <strong id="mobilePrintTitle" data-i18n="printBtn">🖨 Stampa / PDF</strong>
+      <button class="mobile-print-close" type="button" aria-label="Chiudi" onclick="closeMobilePrintOverlay()">×</button>
+    </div>
+
+    <button class="mobile-print-option" type="button" onclick="printPortfolio('portfolio')">
+      <strong data-i18n="printPortfolioMode">Versione Portfolio</strong>
+      <span data-i18n="printPortfolioHelp">Grafica completa</span>
+    </button>
+
+    <button class="mobile-print-option" type="button" onclick="printPortfolio('ats')">
+      <strong data-i18n="printAtsMode">CV professionale</strong>
+      <span data-i18n="printAtsHelp">Ottimizzato per portali di recruiting e sistemi ATS</span>
+    </button>
+  </div>
+</div>
 
 </body>
 </html>
