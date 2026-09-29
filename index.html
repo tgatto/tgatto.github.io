@@ -1021,6 +1021,54 @@ button,input{font:inherit}
   }
 }
 
+
+/* Mobile header: keep controls anchored to the right even when print menu opens */
+@media(max-width:850px){
+  .actions{
+    width:100% !important;
+    display:grid !important;
+    grid-template-columns:1fr auto auto auto !important;
+    gap:8px !important;
+    align-items:start !important;
+    justify-content:stretch !important;
+  }
+
+  #langBtn{
+    grid-column:2 !important;
+    justify-self:end !important;
+  }
+
+  #themeBtn{
+    grid-column:3 !important;
+    justify-self:end !important;
+  }
+
+  #expandBtn{
+    grid-column:4 !important;
+    justify-self:end !important;
+  }
+
+  .print-menu{
+    grid-column:2 / 5 !important;
+    justify-self:end !important;
+    width:auto !important;
+    margin-left:0 !important;
+  }
+
+  .print-menu[open]{
+    width:min(100%, 320px) !important;
+    margin-left:0 !important;
+  }
+
+  .print-menu .print-summary{
+    margin-left:auto !important;
+  }
+
+  .print-menu[open] .print-menu-list{
+    width:100% !important;
+  }
+}
+
 </style>
 </head>
 <body>
